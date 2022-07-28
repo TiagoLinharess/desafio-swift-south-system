@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventsListView: UIView {
+final class EventsListView: UIView {
     
     private let colors = Flavor.shared.colors
     
@@ -45,12 +45,10 @@ class EventsListView: UIView {
     }
 }
 
-private extension EventsListView {
+extension EventsListView: ViewCode {
     
-    func setup() {
+    func configureView() {
         backgroundColor = colors.background.color
-        setupHierarchy()
-        setupConstraints()
     }
     
     func setupHierarchy() {

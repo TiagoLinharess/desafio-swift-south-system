@@ -7,17 +7,11 @@
 
 import UIKit
 
-class EventsListViewController<ViewModel>: UIViewController where ViewModel: EventsListViewModelProtocol {
+final class EventsListViewController<ViewModel>: UIViewController where ViewModel: EventsListViewModelProtocol {
     
     private let viewModel: ViewModel
-    
     private let customView = EventsListView()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view = customView
-    }
-
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -25,5 +19,14 @@ class EventsListViewController<ViewModel>: UIViewController where ViewModel: Eve
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        view = customView
     }
 }

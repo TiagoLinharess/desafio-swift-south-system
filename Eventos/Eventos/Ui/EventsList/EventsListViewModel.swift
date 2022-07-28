@@ -8,10 +8,11 @@
 import Foundation
 
 protocol EventsListViewModelProtocol {
-    
+    var events: [Int] { get set }
 }
 
 
 class EventsListViewModel: EventsListViewModelProtocol {
     
+    var events: [Int] = []
 }
