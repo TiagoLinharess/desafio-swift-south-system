@@ -22,6 +22,10 @@
 		ED3DEFCE28930D2B00568293 /* FlavorColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFCD28930D2B00568293 /* FlavorColors.swift */; };
 		EDCF9FB01C757BF1F88657E6 /* Pods_EventosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1B8F03F69B55071DD3D4C6 /* Pods_EventosTests.framework */; };
 		EDF312DC289318850031D751 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DB289318850031D751 /* ViewCode.swift */; };
+		EDF312E028931B020031D751 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DF28931B020031D751 /* EventViewData.swift */; };
+		EDF312E328931BF00031D751 /* EventsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E228931BF00031D751 /* EventsListCell.swift */; };
+		EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E628931CB10031D751 /* CustomErrorView.swift */; };
+		EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E928931CF60031D751 /* ViewStatus.swift */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		ED3DEFCB28930CAA00568293 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
 		ED3DEFCD28930D2B00568293 /* FlavorColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorColors.swift; sourceTree = "<group>"; };
 		EDF312DB289318850031D751 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		EDF312DF28931B020031D751 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
+		EDF312E228931BF00031D751 /* EventsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListCell.swift; sourceTree = "<group>"; };
+		EDF312E628931CB10031D751 /* CustomErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorView.swift; sourceTree = "<group>"; };
+		EDF312E928931CF60031D751 /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF312D9289317910031D751 /* Commons */,
-				ED3DEFC62893091300568293 /* Model */,
+				ED3DEFC62893091300568293 /* Models */,
 				ED3DEFBC2893019B00568293 /* Ui */,
 				ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */,
 				ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */,
@@ -179,26 +187,26 @@
 			isa = PBXGroup;
 			children = (
 				EDF312DA289318740031D751 /* Base */,
-				ED3DEFBD289302AB00568293 /* EventsList */,
+				ED3DEFBD289302AB00568293 /* Events */,
 			);
 			path = Ui;
 			sourceTree = "<group>";
 		};
-		ED3DEFBD289302AB00568293 /* EventsList */ = {
+		ED3DEFBD289302AB00568293 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				ED3DEFC4289304F600568293 /* EventsListView.swift */,
-				ED3DEFC0289302D400568293 /* EventsListViewController.swift */,
-				ED3DEFC22893030300568293 /* EventsListViewModel.swift */,
+				EDF312DE28931AB30031D751 /* EventsList */,
 			);
-			path = EventsList;
+			path = Events;
 			sourceTree = "<group>";
 		};
-		ED3DEFC62893091300568293 /* Model */ = {
+		ED3DEFC62893091300568293 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDF312E828931CDD0031D751 /* ViewStatus */,
+				EDF312DD28931A9A0031D751 /* Events */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED3DEFC72893095F00568293 /* Colors */ = {
@@ -221,6 +229,7 @@
 		EDF312D9289317910031D751 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				EDF312E428931C750031D751 /* UI */,
 				ED3DEFC72893095F00568293 /* Colors */,
 				ED3DEFCA28930C9400568293 /* Flavor */,
 			);
@@ -233,6 +242,57 @@
 				EDF312DB289318850031D751 /* ViewCode.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		EDF312DD28931A9A0031D751 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312DF28931B020031D751 /* EventViewData.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		EDF312DE28931AB30031D751 /* EventsList */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312E128931BDE0031D751 /* Scenes */,
+				ED3DEFC4289304F600568293 /* EventsListView.swift */,
+				ED3DEFC0289302D400568293 /* EventsListViewController.swift */,
+				ED3DEFC22893030300568293 /* EventsListViewModel.swift */,
+			);
+			path = EventsList;
+			sourceTree = "<group>";
+		};
+		EDF312E128931BDE0031D751 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312E228931BF00031D751 /* EventsListCell.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF312E428931C750031D751 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312E528931C7B0031D751 /* ErrorView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EDF312E528931C7B0031D751 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312E628931CB10031D751 /* CustomErrorView.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		EDF312E828931CDD0031D751 /* ViewStatus */ = {
+			isa = PBXGroup;
+			children = (
+				EDF312E928931CF60031D751 /* ViewStatus.swift */,
+			);
+			path = ViewStatus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,9 +535,13 @@
 				ED3DEFC1289302D400568293 /* EventsListViewController.swift in Sources */,
 				ED3DEFCE28930D2B00568293 /* FlavorColors.swift in Sources */,
 				EDF312DC289318850031D751 /* ViewCode.swift in Sources */,
+				EDF312E028931B020031D751 /* EventViewData.swift in Sources */,
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
+				EDF312E328931BF00031D751 /* EventsListCell.swift in Sources */,
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
+				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
+				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
 				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
 				ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */,
 				ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */,

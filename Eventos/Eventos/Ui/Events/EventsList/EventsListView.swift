@@ -20,8 +20,9 @@ final class EventsListView: UIView {
     }()
     
     private lazy var loadingView: UIActivityIndicatorView = {
-        let loadingView = UIActivityIndicatorView(style: .medium)
+        let loadingView = UIActivityIndicatorView(style: .large)
         loadingView.startAnimating()
+        loadingView.color = colors.background.onColor
         
         return loadingView
     }()
@@ -42,6 +43,21 @@ final class EventsListView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func handle(with viewStatus: ViewStatus, onError: @escaping () -> Void) {
+        resetStatus()
+        
+        switch viewStatus {
+        case .success:
+            presentSuccess()
+        case .loading:
+            presentLoading()
+        case .loadingMore:
+            presentLoading()
+        case let .error(error):
+            presentError(message: error, action: onError)
+        }
     }
 }
 
@@ -68,5 +84,26 @@ extension EventsListView: ViewCode {
             
             tableView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32)
         ])
+    }
+}
+
+private extension EventsListView {
+
+    func resetStatus() {
+        containerStackView.subviews.forEach({ $0.isHidden = true })
+    }
+    
+    func presentSuccess() {
+        tableView.isHidden = false
+        tableView.reloadData()
+    }
+    
+    func presentError(message: String? = nil, action: @escaping () -> Void) {
+//        customErrorView.isHidden = false
+//        customErrorView.setup(localizedMessage: message, imageName: nil, action: action)
+    }
+    
+    func presentLoading() {
+        loadingView.isHidden = false
     }
 }
