@@ -10,11 +10,16 @@
 		4481DAB242546CAADABD0B88 /* Pods_Eventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCC813F1736E32DBFD233E8 /* Pods_Eventos.framework */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
-		ED3DEF912892FC5A00568293 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF902892FC5A00568293 /* ViewController.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
 		ED3DEFA42892FC5E00568293 /* EventosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFA32892FC5E00568293 /* EventosTests.swift */; };
 		ED3DEFAE2892FC5E00568293 /* EventosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFAD2892FC5E00568293 /* EventosUITests.swift */; };
 		ED3DEFB02892FC5E00568293 /* EventosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFAF2892FC5E00568293 /* EventosUITestsLaunchTests.swift */; };
+		ED3DEFC1289302D400568293 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFC0289302D400568293 /* EventsListViewController.swift */; };
+		ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFC22893030300568293 /* EventsListViewModel.swift */; };
+		ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFC4289304F600568293 /* EventsListView.swift */; };
+		ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFC8289309AA00568293 /* UIColor+Extensions.swift */; };
+		ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFCB28930CAA00568293 /* Flavor.swift */; };
+		ED3DEFCE28930D2B00568293 /* FlavorColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFCD28930D2B00568293 /* FlavorColors.swift */; };
 		EDCF9FB01C757BF1F88657E6 /* Pods_EventosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1B8F03F69B55071DD3D4C6 /* Pods_EventosTests.framework */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
 /* End PBXBuildFile section */
@@ -49,7 +54,6 @@
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED3DEF902892FC5A00568293 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED3DEF952892FC5D00568293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3DEF9A2892FC5D00568293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED3DEF9F2892FC5E00568293 /* EventosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +61,12 @@
 		ED3DEFA92892FC5E00568293 /* EventosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEFAD2892FC5E00568293 /* EventosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosUITests.swift; sourceTree = "<group>"; };
 		ED3DEFAF2892FC5E00568293 /* EventosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED3DEFC0289302D400568293 /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
+		ED3DEFC22893030300568293 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
+		ED3DEFC4289304F600568293 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		ED3DEFC8289309AA00568293 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		ED3DEFCB28930CAA00568293 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
+		ED3DEFCD28930D2B00568293 /* FlavorColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +117,6 @@
 				9D01242F872BEECDA7D121D0 /* Pods-EventosTests.debug.xcconfig */,
 				4BB4F797039B6BDE6905057D /* Pods-EventosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,9 +145,10 @@
 		ED3DEF8B2892FC5A00568293 /* Eventos */ = {
 			isa = PBXGroup;
 			children = (
+				ED3DEFC62893091300568293 /* Model */,
+				ED3DEFBC2893019B00568293 /* Ui */,
 				ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */,
 				ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */,
-				ED3DEF902892FC5A00568293 /* ViewController.swift */,
 				ED3DEF952892FC5D00568293 /* Assets.xcassets */,
 				ED3DEF9A2892FC5D00568293 /* Info.plist */,
 			);
@@ -160,6 +170,50 @@
 				ED3DEFAF2892FC5E00568293 /* EventosUITestsLaunchTests.swift */,
 			);
 			path = EventosUITests;
+			sourceTree = "<group>";
+		};
+		ED3DEFBC2893019B00568293 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DEFBD289302AB00568293 /* EventsList */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
+		ED3DEFBD289302AB00568293 /* EventsList */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DEFC4289304F600568293 /* EventsListView.swift */,
+				ED3DEFC0289302D400568293 /* EventsListViewController.swift */,
+				ED3DEFC22893030300568293 /* EventsListViewModel.swift */,
+			);
+			path = EventsList;
+			sourceTree = "<group>";
+		};
+		ED3DEFC62893091300568293 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DEFCA28930C9400568293 /* Flavor */,
+				ED3DEFC72893095F00568293 /* Colors */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED3DEFC72893095F00568293 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DEFC8289309AA00568293 /* UIColor+Extensions.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		ED3DEFCA28930C9400568293 /* Flavor */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DEFCB28930CAA00568293 /* Flavor.swift */,
+				ED3DEFCD28930D2B00568293 /* FlavorColors.swift */,
+			);
+			path = Flavor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,7 +453,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED3DEF912892FC5A00568293 /* ViewController.swift in Sources */,
+				ED3DEFC1289302D400568293 /* EventsListViewController.swift in Sources */,
+				ED3DEFCE28930D2B00568293 /* FlavorColors.swift in Sources */,
+				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
+				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
+				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
+				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
 				ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */,
 				ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */,
 			);
