@@ -23,7 +23,7 @@
 		EDCF9FB01C757BF1F88657E6 /* Pods_EventosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1B8F03F69B55071DD3D4C6 /* Pods_EventosTests.framework */; };
 		EDF312DC289318850031D751 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DB289318850031D751 /* ViewCode.swift */; };
 		EDF312E028931B020031D751 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DF28931B020031D751 /* EventViewData.swift */; };
-		EDF312E328931BF00031D751 /* EventsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E228931BF00031D751 /* EventsListCell.swift */; };
+		EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */; };
 		EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E628931CB10031D751 /* CustomErrorView.swift */; };
 		EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E928931CF60031D751 /* ViewStatus.swift */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
@@ -74,7 +74,7 @@
 		ED3DEFCD28930D2B00568293 /* FlavorColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorColors.swift; sourceTree = "<group>"; };
 		EDF312DB289318850031D751 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		EDF312DF28931B020031D751 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
-		EDF312E228931BF00031D751 /* EventsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListCell.swift; sourceTree = "<group>"; };
+		EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListTableViewCell.swift; sourceTree = "<group>"; };
 		EDF312E628931CB10031D751 /* CustomErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorView.swift; sourceTree = "<group>"; };
 		EDF312E928931CF60031D751 /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,7 +266,7 @@
 		EDF312E128931BDE0031D751 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF312E228931BF00031D751 /* EventsListCell.swift */,
+				EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -538,7 +538,7 @@
 				EDF312E028931B020031D751 /* EventViewData.swift in Sources */,
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
-				EDF312E328931BF00031D751 /* EventsListCell.swift in Sources */,
+				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
 				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
