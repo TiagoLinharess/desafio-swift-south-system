@@ -14,5 +14,5 @@ struct EventViewData {
     let price: Double
     let image: String
     let description: String
-    let date: Double
+    let date: String
 }

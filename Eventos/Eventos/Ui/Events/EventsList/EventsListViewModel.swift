@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol EventsListViewModelProtocol {
-    var events: [Int] { get set }
+    var events: [EventViewData] { get set }
     var viewStatus: PublishSubject<ViewStatus> { get set }
     
     func getEvents()
@@ -18,7 +18,7 @@ protocol EventsListViewModelProtocol {
 
 class EventsListViewModel: EventsListViewModelProtocol {
     
-    var events: [Int] = []
+    var events: [EventViewData] = []
     var viewStatus = PublishSubject<ViewStatus>()
     
     init() {
@@ -29,6 +29,15 @@ class EventsListViewModel: EventsListViewModelProtocol {
         viewStatus.onNext(.loading)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.events = [.init(
+                id: "0",
+                title: "aaaaa",
+                price: 20.00,
+                image: "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png",
+                description: "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                date: "30/09/2000"
+            )
+            ]
             self.viewStatus.onNext(.success)
         }
     }
