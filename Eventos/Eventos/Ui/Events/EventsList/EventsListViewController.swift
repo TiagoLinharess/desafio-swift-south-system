@@ -11,8 +11,8 @@ final class EventsListViewController: UIViewController {
 
     private let customView: EventsListView
     
-    init() {
-        customView = .init(viewModel: EventsListViewModel())
+    init(viewModel: EventsListViewModelProtocol) {
+        customView = .init(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
     }
     

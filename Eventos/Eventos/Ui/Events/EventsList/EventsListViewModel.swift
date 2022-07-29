@@ -13,6 +13,7 @@ protocol EventsListViewModelProtocol {
     var viewStatus: PublishSubject<ViewStatus> { get set }
     
     func getEvents()
+    func selectEvent(at index: Int)
 }
 
 
@@ -20,11 +21,16 @@ class EventsListViewModel: EventsListViewModelProtocol {
     
     var events: [EventViewData] = []
     var viewStatus = PublishSubject<ViewStatus>()
+    var onSelectEvent: ((EventViewData) -> Void)?
     
     private let worker: GetEventsWorkerProtocol
     
     init(worker: GetEventsWorkerProtocol = EventsWorker()) {
         self.worker = worker
+    }
+    
+    func selectEvent(at index: Int) {
+        onSelectEvent?(events[index])
     }
     
     func getEvents() {

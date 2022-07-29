@@ -10,12 +10,14 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let colors = Flavor.shared.colors
+    var coordinator: EventsCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let viewController = EventsListViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = UINavigationController()
+        coordinator = EventsCoordinator(navigationController: navigationController)
+        coordinator?.start()
+        
         window = UIWindow()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

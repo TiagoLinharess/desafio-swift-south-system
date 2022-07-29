@@ -24,6 +24,8 @@
 		ED270B1528944E8E003CAAA6 /* EventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1428944E8E003CAAA6 /* EventsWorker.swift */; };
 		ED270B1728944F4A003CAAA6 /* EventsListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1628944F4A003CAAA6 /* EventsListEndpoint.swift */; };
 		ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1928945193003CAAA6 /* EventDto.swift */; };
+		ED270B2028946B9F003CAAA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1F28946B9F003CAAA6 /* Coordinator.swift */; };
+		ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B2128946BDD003CAAA6 /* EventsCoordinator.swift */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		ED270B1428944E8E003CAAA6 /* EventsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsWorker.swift; sourceTree = "<group>"; };
 		ED270B1628944F4A003CAAA6 /* EventsListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListEndpoint.swift; sourceTree = "<group>"; };
 		ED270B1928945193003CAAA6 /* EventDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDto.swift; sourceTree = "<group>"; };
+		ED270B1F28946B9F003CAAA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ED270B2128946BDD003CAAA6 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +274,14 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		ED270B1E28946B7E003CAAA6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ED270B1F28946B9F003CAAA6 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		ED3DEF802892FC5A00568293 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF312DE28931AB30031D751 /* EventsList */,
+				ED270B2128946BDD003CAAA6 /* EventsCoordinator.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -345,6 +358,7 @@
 		ED3DEFC62893091300568293 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED270B1E28946B7E003CAAA6 /* Coordinator */,
 				EDF312E828931CDD0031D751 /* ViewStatus */,
 				EDF312DD28931A9A0031D751 /* Events */,
 			);
@@ -398,8 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				EDF312E128931BDE0031D751 /* Scenes */,
-				ED3DEFC4289304F600568293 /* EventsListView.swift */,
 				ED3DEFC0289302D400568293 /* EventsListViewController.swift */,
+				ED3DEFC4289304F600568293 /* EventsListView.swift */,
 				ED3DEFC22893030300568293 /* EventsListViewModel.swift */,
 			);
 			path = EventsList;
@@ -690,6 +704,7 @@
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED270B0D28944995003CAAA6 /* APIRepository.swift in Sources */,
 				ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */,
+				ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */,
 				ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */,
 				ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
@@ -703,6 +718,7 @@
 				ED270B0628944536003CAAA6 /* Date+Extensions.swift in Sources */,
 				ED270B1528944E8E003CAAA6 /* EventsWorker.swift in Sources */,
 				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
+				ED270B2028946B9F003CAAA6 /* Coordinator.swift in Sources */,
 				ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */,
 				ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */,
 			);

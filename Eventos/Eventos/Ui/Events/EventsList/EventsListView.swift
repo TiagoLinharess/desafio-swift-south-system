@@ -71,6 +71,10 @@ extension EventsListView: UITableViewDelegate, UITableViewDataSource {
         cell.configure(event)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectEvent(at: indexPath.row)
+    }
 }
 
 // MARK: Setup methods
