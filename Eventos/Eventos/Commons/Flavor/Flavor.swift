@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Flavor {
+final class Flavor {
     
     static let shared = Flavor()
 

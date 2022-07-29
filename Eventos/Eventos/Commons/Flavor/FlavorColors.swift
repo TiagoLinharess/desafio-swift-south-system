@@ -7,15 +7,18 @@
 
 import UIKit
 
-struct FlavorColorsSchemes {
+extension Flavor {
     
-    let background = FlavorColors(color: UIColor(hexString: "#272727"), onColor: UIColor(hexString: "#BEBEBE"))
-    let primary = FlavorColors(color: UIColor(hexString: "#3BABC1"), onColor: UIColor(hexString: "#FFFFFF"))
-    let surface = FlavorColors(color: UIColor(hexString: "#717171"), onColor: UIColor(hexString: "#FFFFFF"))
-}
+    struct FlavorColorsSchemes {
+        
+        let background = FlavorColors(color: UIColor(hexString: "#272727"), onColor: UIColor(hexString: "#BEBEBE"))
+        let primary = FlavorColors(color: UIColor(hexString: "#3BABC1"), onColor: UIColor(hexString: "#FFFFFF"))
+        let surface = FlavorColors(color: UIColor(hexString: "#717171"), onColor: UIColor(hexString: "#FFFFFF"))
+    }
 
-struct FlavorColors {
-    
-    let color: UIColor
-    let onColor: UIColor
+    struct FlavorColors {
+        
+        let color: UIColor
+        let onColor: UIColor
+    }
 }
