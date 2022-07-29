@@ -21,24 +21,30 @@ class EventsListViewModel: EventsListViewModelProtocol {
     var events: [EventViewData] = []
     var viewStatus = PublishSubject<ViewStatus>()
     
-    init() {
-
+    private let worker: GetEventsWorkerProtocol
+    
+    init(worker: GetEventsWorkerProtocol = EventsWorker()) {
+        self.worker = worker
     }
     
     func getEvents() {
         viewStatus.onNext(.loading)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.events = [.init(
-                id: "0",
-                title: "aaaaa",
-                price: 20.00,
-                image: "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png",
-                description: "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-                date: 1534784400000
-            )
-            ]
-            self.viewStatus.onNext(.success)
+        worker.getEvents { [weak self] result in
+            switch result {
+                
+            case let .success(events):
+                if events.isEmpty {
+                    self?.events = []
+                    self?.viewStatus.onNext(.noResults)
+                    return
+                }
+                
+                self?.events = events
+                self?.viewStatus.onNext(.success)
+            case let .failure(error):
+                self?.viewStatus.onNext(.error(error.errorDescription))
+            }
         }
     }
 }

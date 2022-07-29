@@ -123,8 +123,6 @@ private extension EventsListView {
             presentSuccess()
         case .loading:
             presentLoading()
-        case .loadingMore:
-            presentLoading()
         case let .error(error):
             presentError(message: error, action: onError)
         case .noResults:

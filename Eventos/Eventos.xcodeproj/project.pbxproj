@@ -18,6 +18,12 @@
 		ED270B0228940819003CAAA6 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B0128940819003CAAA6 /* WebImage.swift */; };
 		ED270B0628944536003CAAA6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B0528944536003CAAA6 /* Date+Extensions.swift */; };
 		ED270B0928944700003CAAA6 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B0828944700003CAAA6 /* Int+Extensions.swift */; };
+		ED270B0D28944995003CAAA6 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B0C28944995003CAAA6 /* APIRepository.swift */; };
+		ED270B1028944BC5003CAAA6 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B0F28944BC5003CAAA6 /* RequestError.swift */; };
+		ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1128944D70003CAAA6 /* Endpoint.swift */; };
+		ED270B1528944E8E003CAAA6 /* EventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1428944E8E003CAAA6 /* EventsWorker.swift */; };
+		ED270B1728944F4A003CAAA6 /* EventsListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1628944F4A003CAAA6 /* EventsListEndpoint.swift */; };
+		ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1928945193003CAAA6 /* EventDto.swift */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
@@ -76,6 +82,12 @@
 		ED270B0128940819003CAAA6 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
 		ED270B0528944536003CAAA6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		ED270B0828944700003CAAA6 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		ED270B0C28944995003CAAA6 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		ED270B0F28944BC5003CAAA6 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		ED270B1128944D70003CAAA6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		ED270B1428944E8E003CAAA6 /* EventsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsWorker.swift; sourceTree = "<group>"; };
+		ED270B1628944F4A003CAAA6 /* EventsListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListEndpoint.swift; sourceTree = "<group>"; };
+		ED270B1928945193003CAAA6 /* EventDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDto.swift; sourceTree = "<group>"; };
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +210,7 @@
 		ED270B032894450A003CAAA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ED270B0E28944BB0003CAAA6 /* Error */,
 				ED270B07289446EE003CAAA6 /* Int */,
 				ED270B0428944526003CAAA6 /* Date */,
 				ED3DEFC72893095F00568293 /* Colors */,
@@ -220,6 +233,41 @@
 				ED270B0828944700003CAAA6 /* Int+Extensions.swift */,
 			);
 			path = Int;
+			sourceTree = "<group>";
+		};
+		ED270B0A2894496C003CAAA6 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED270B0B2894497D003CAAA6 /* Repository */,
+				ED270B1328944E70003CAAA6 /* Events */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		ED270B0B2894497D003CAAA6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED270B0C28944995003CAAA6 /* APIRepository.swift */,
+				ED270B1128944D70003CAAA6 /* Endpoint.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		ED270B0E28944BB0003CAAA6 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				ED270B0F28944BC5003CAAA6 /* RequestError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		ED270B1328944E70003CAAA6 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				ED270B1428944E8E003CAAA6 /* EventsWorker.swift */,
+				ED270B1628944F4A003CAAA6 /* EventsListEndpoint.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		ED3DEF802892FC5A00568293 = {
@@ -250,6 +298,7 @@
 				EDF312D9289317910031D751 /* Commons */,
 				ED3DEFBC2893019B00568293 /* Ui */,
 				ED3DEFC62893091300568293 /* Models */,
+				ED270B0A2894496C003CAAA6 /* Workers */,
 				ED270B032894450A003CAAA6 /* Utils */,
 				ED270AE52893FB4B003CAAA6 /* Resources */,
 				ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */,
@@ -340,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF312DF28931B020031D751 /* EventViewData.swift */,
+				ED270B1928945193003CAAA6 /* EventDto.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -633,11 +683,15 @@
 			files = (
 				ED3DEFC1289302D400568293 /* EventsListViewController.swift in Sources */,
 				ED3DEFCE28930D2B00568293 /* FlavorColors.swift in Sources */,
+				ED270B1728944F4A003CAAA6 /* EventsListEndpoint.swift in Sources */,
 				EDF312DC289318850031D751 /* ViewCode.swift in Sources */,
 				ED270B0928944700003CAAA6 /* Int+Extensions.swift in Sources */,
 				EDF312E028931B020031D751 /* EventViewData.swift in Sources */,
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
+				ED270B0D28944995003CAAA6 /* APIRepository.swift in Sources */,
+				ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */,
 				ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */,
+				ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
 				ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */,
 				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,
@@ -645,7 +699,9 @@
 				ED270B0228940819003CAAA6 /* WebImage.swift in Sources */,
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
 				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
+				ED270B1028944BC5003CAAA6 /* RequestError.swift in Sources */,
 				ED270B0628944536003CAAA6 /* Date+Extensions.swift in Sources */,
+				ED270B1528944E8E003CAAA6 /* EventsWorker.swift in Sources */,
 				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
 				ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */,
 				ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */,

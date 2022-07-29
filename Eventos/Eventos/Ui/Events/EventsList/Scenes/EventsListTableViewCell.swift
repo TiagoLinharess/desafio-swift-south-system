@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class EventsListTableViewCell: UITableViewCell {
     
@@ -40,7 +39,6 @@ class EventsListTableViewCell: UITableViewCell {
     
     private lazy var eventImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
         
         return imageView
@@ -48,7 +46,7 @@ class EventsListTableViewCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         label.textColor = colors.surface.onColor
         label.font = fonts.quickSandMedium.withSize(20)
         
@@ -80,15 +78,14 @@ class EventsListTableViewCell: UITableViewCell {
     }
     
     func configure(_ photo: String) {
-        if let url = URL(string: photo) {
-            eventImageView.setRemoteImage(url: url, placeholder: "photo")
-            eventImageView.roundedCorner(withRadius: 24)
-            eventImageView.contentMode = .scaleAspectFill
-        } else {
-            eventImageView.image = UIImage(systemName: "photo")?.withRenderingMode(.alwaysTemplate)
-            eventImageView.tintColor = colors.surface.onColor
-            eventImageView.roundedCorner(withRadius: 0)
-            eventImageView.contentMode = .scaleAspectFit
+        eventImageView.setRemoteImage(urlString: photo) {
+            self.eventImageView.roundedCorner(withRadius: 24)
+            self.eventImageView.contentMode = .scaleAspectFill
+        } onError: {
+            self.eventImageView.image = UIImage(systemName: "photo")?.withRenderingMode(.alwaysTemplate)
+            self.eventImageView.tintColor = self.colors.surface.onColor
+            self.eventImageView.roundedCorner(withRadius: 0)
+            self.eventImageView.contentMode = .scaleAspectFit
         }
     }
     
