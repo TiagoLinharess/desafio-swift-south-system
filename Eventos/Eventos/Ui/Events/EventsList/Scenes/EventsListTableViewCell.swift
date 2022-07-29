@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EventsListTableViewCell: UITableViewCell {
     
@@ -29,9 +30,8 @@ class EventsListTableViewCell: UITableViewCell {
     
     private lazy var eventImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "photo")?.withRenderingMode(.alwaysTemplate)
-        imageView.tintColor = colors.surface.onColor
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
         
         return imageView
     }()
@@ -56,6 +56,17 @@ class EventsListTableViewCell: UITableViewCell {
     
     func configure(_ event: EventViewData) {
         titleLabel.text = event.title
+        
+        if let url = URL(string: event.image) {
+            eventImageView.setRemoteImage(url: url, placeholder: "photo")
+            eventImageView.roundedCorner(withRadius: 24)
+            eventImageView.contentMode = .scaleAspectFill
+        } else {
+            eventImageView.image = UIImage(systemName: "photo")?.withRenderingMode(.alwaysTemplate)
+            eventImageView.tintColor = colors.surface.onColor
+            eventImageView.roundedCorner(withRadius: 0)
+            eventImageView.contentMode = .scaleAspectFit
+        }
     }
 }
 
@@ -76,8 +87,8 @@ extension EventsListTableViewCell: ViewCode {
             containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             containerStackView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4),
             
-            eventImageView.widthAnchor.constraint(equalToConstant: 36),
-            eventImageView.heightAnchor.constraint(equalToConstant: 36),
+            eventImageView.widthAnchor.constraint(equalToConstant: 48),
+            eventImageView.heightAnchor.constraint(equalToConstant: 48),
         ])
     }
     

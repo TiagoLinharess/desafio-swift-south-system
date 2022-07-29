@@ -15,6 +15,7 @@
 		ED270AFB28940316003CAAA6 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF628940316003CAAA6 /* Quicksand-Medium.ttf */; };
 		ED270AFC28940316003CAAA6 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF728940316003CAAA6 /* Quicksand-SemiBold.ttf */; };
 		ED270AFD28940316003CAAA6 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF828940316003CAAA6 /* Quicksand-Light.ttf */; };
+		ED270B0228940819003CAAA6 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B0128940819003CAAA6 /* WebImage.swift */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		ED270AF628940316003CAAA6 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		ED270AF728940316003CAAA6 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED270AF828940316003CAAA6 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		ED270B0128940819003CAAA6 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,22 @@
 				ED270AF728940316003CAAA6 /* Quicksand-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ED270AFF289407F2003CAAA6 /* RoundedCorner */ = {
+			isa = PBXGroup;
+			children = (
+				ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */,
+			);
+			path = RoundedCorner;
+			sourceTree = "<group>";
+		};
+		ED270B0028940801003CAAA6 /* WebImage */ = {
+			isa = PBXGroup;
+			children = (
+				ED270B0128940819003CAAA6 /* WebImage.swift */,
+			);
+			path = WebImage;
 			sourceTree = "<group>";
 		};
 		ED3DEF802892FC5A00568293 = {
@@ -318,8 +336,9 @@
 		EDF312E428931C750031D751 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ED270B0028940801003CAAA6 /* WebImage */,
 				EDF312E528931C7B0031D751 /* ErrorView */,
-				ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */,
+				ED270AFF289407F2003CAAA6 /* RoundedCorner */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -592,6 +611,7 @@
 				ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */,
 				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
+				ED270B0228940819003CAAA6 /* WebImage.swift in Sources */,
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
 				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
 				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
