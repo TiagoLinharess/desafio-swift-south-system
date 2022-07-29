@@ -27,6 +27,7 @@ final class CustomErrorView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "exclamationmark.triangle")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = colors.background.onColor
+        imageView.contentMode = .scaleAspectFit
         
         return imageView
     }()

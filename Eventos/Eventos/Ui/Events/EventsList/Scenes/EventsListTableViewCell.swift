@@ -19,12 +19,21 @@ class EventsListTableViewCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         stackView.spacing = 16
         stackView.backgroundColor = colors.surface.color
         stackView.roundedCorner(withRadius: 8)
         
         return stackView
+    }()
+    
+    private lazy var eventImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "photo")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = colors.surface.onColor
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -54,6 +63,7 @@ extension EventsListTableViewCell: ViewCode {
     
     func setupHierarchy() {
         contentView.addSubview(containerStackView)
+        containerStackView.addArrangedSubview(eventImageView)
         containerStackView.addArrangedSubview(titleLabel)
     }
     
@@ -64,7 +74,10 @@ extension EventsListTableViewCell: ViewCode {
             containerStackView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 4),
             containerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            containerStackView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4)
+            containerStackView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4),
+            
+            eventImageView.widthAnchor.constraint(equalToConstant: 36),
+            eventImageView.heightAnchor.constraint(equalToConstant: 36),
         ])
     }
     
