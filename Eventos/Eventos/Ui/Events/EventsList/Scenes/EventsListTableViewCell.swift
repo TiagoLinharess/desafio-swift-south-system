@@ -23,7 +23,17 @@ class EventsListTableViewCell: UITableViewCell {
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         stackView.spacing = 16
         stackView.backgroundColor = colors.surface.color
-        stackView.roundedCorner(withRadius: 8)
+        stackView.roundedCorner(withRadius: 24)
+        
+        return stackView
+    }()
+    
+    private lazy var titleAndDateStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        stackView.spacing = 8
+        stackView.backgroundColor = .clear
         
         return stackView
     }()
@@ -40,7 +50,16 @@ class EventsListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.textColor = colors.surface.onColor
-        label.font = fonts.quickSandRegular.withSize(16)
+        label.font = fonts.quickSandMedium.withSize(20)
+        
+        return label
+    }()
+    
+    private lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textColor = colors.surface.onColor
+        label.font = fonts.quickSandRegular.withSize(12)
         
         return label
     }()
@@ -56,8 +75,12 @@ class EventsListTableViewCell: UITableViewCell {
     
     func configure(_ event: EventViewData) {
         titleLabel.text = event.title
-        
-        if let url = URL(string: event.image) {
+        configure(event.image)
+        configure(event.date)
+    }
+    
+    func configure(_ photo: String) {
+        if let url = URL(string: photo) {
             eventImageView.setRemoteImage(url: url, placeholder: "photo")
             eventImageView.roundedCorner(withRadius: 24)
             eventImageView.contentMode = .scaleAspectFill
@@ -68,6 +91,10 @@ class EventsListTableViewCell: UITableViewCell {
             eventImageView.contentMode = .scaleAspectFit
         }
     }
+    
+    func configure(_ dateInt: Int) {
+        dateLabel.text = dateInt.timeStampToDateFormat()
+    }
 }
 
 extension EventsListTableViewCell: ViewCode {
@@ -75,7 +102,9 @@ extension EventsListTableViewCell: ViewCode {
     func setupHierarchy() {
         contentView.addSubview(containerStackView)
         containerStackView.addArrangedSubview(eventImageView)
-        containerStackView.addArrangedSubview(titleLabel)
+        containerStackView.addArrangedSubview(titleAndDateStackView)
+        titleAndDateStackView.addArrangedSubview(titleLabel)
+        titleAndDateStackView.addArrangedSubview(dateLabel)
     }
     
     func setupConstraints() {
@@ -87,8 +116,8 @@ extension EventsListTableViewCell: ViewCode {
             containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             containerStackView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4),
             
-            eventImageView.widthAnchor.constraint(equalToConstant: 48),
-            eventImageView.heightAnchor.constraint(equalToConstant: 48),
+            eventImageView.widthAnchor.constraint(equalToConstant: 80),
+            eventImageView.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     

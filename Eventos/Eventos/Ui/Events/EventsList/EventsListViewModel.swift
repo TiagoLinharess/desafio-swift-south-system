@@ -28,14 +28,14 @@ class EventsListViewModel: EventsListViewModelProtocol {
     func getEvents() {
         viewStatus.onNext(.loading)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.events = [.init(
                 id: "0",
                 title: "aaaaa",
                 price: 20.00,
                 image: "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png",
                 description: "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-                date: "30/09/2000"
+                date: 1534784400000
             )
             ]
             self.viewStatus.onNext(.success)
