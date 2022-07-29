@@ -32,6 +32,7 @@ final class EventsListView: UIView {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(EventsListTableViewCell.self, forCellReuseIdentifier: EventsListTableViewCell.identifier)
