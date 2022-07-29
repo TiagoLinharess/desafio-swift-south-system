@@ -11,7 +11,8 @@ class EventsListTableViewCell: UITableViewCell {
     
     static let identifier = "EventsListTableViewCell"
     
-    let colors = Flavor.shared.colors
+    private let colors = Flavor.shared.colors
+    private let fonts = Flavor.shared.fonts
     
     private lazy var containerStackView: UIStackView = {
         let stackView = UIStackView()
@@ -30,6 +31,7 @@ class EventsListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.textColor = colors.surface.onColor
+        label.font = fonts.quickSandRegular.withSize(16)
         
         return label
     }()

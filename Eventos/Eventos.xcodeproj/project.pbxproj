@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4481DAB242546CAADABD0B88 /* Pods_Eventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCC813F1736E32DBFD233E8 /* Pods_Eventos.framework */; };
 		ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */; };
+		ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270AF22893FCF1003CAAA6 /* FlavorFonts.swift */; };
+		ED270AF928940316003CAAA6 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF428940316003CAAA6 /* Quicksand-Bold.ttf */; };
+		ED270AFA28940316003CAAA6 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF528940316003CAAA6 /* Quicksand-Regular.ttf */; };
+		ED270AFB28940316003CAAA6 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF628940316003CAAA6 /* Quicksand-Medium.ttf */; };
+		ED270AFC28940316003CAAA6 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF728940316003CAAA6 /* Quicksand-SemiBold.ttf */; };
+		ED270AFD28940316003CAAA6 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF828940316003CAAA6 /* Quicksand-Light.ttf */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
@@ -58,6 +64,12 @@
 		C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eventos_EventosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F3DDE4D26F447F19462549 /* Pods-Eventos-EventosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventos-EventosUITests.release.xcconfig"; path = "Target Support Files/Pods-Eventos-EventosUITests/Pods-Eventos-EventosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		ED270AF22893FCF1003CAAA6 /* FlavorFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorFonts.swift; sourceTree = "<group>"; };
+		ED270AF428940316003CAAA6 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		ED270AF528940316003CAAA6 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		ED270AF628940316003CAAA6 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		ED270AF728940316003CAAA6 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		ED270AF828940316003CAAA6 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +144,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED270AE52893FB4B003CAAA6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED270AE62893FB60003CAAA6 /* Assets */,
+				ED270AE72893FB6A003CAAA6 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED270AE62893FB60003CAAA6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DEF952892FC5D00568293 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		ED270AE72893FB6A003CAAA6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ED270AF428940316003CAAA6 /* Quicksand-Bold.ttf */,
+				ED270AF828940316003CAAA6 /* Quicksand-Light.ttf */,
+				ED270AF628940316003CAAA6 /* Quicksand-Medium.ttf */,
+				ED270AF528940316003CAAA6 /* Quicksand-Regular.ttf */,
+				ED270AF728940316003CAAA6 /* Quicksand-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		ED3DEF802892FC5A00568293 = {
 			isa = PBXGroup;
 			children = (
@@ -158,11 +199,11 @@
 			isa = PBXGroup;
 			children = (
 				EDF312D9289317910031D751 /* Commons */,
-				ED3DEFC62893091300568293 /* Models */,
 				ED3DEFBC2893019B00568293 /* Ui */,
+				ED3DEFC62893091300568293 /* Models */,
+				ED270AE52893FB4B003CAAA6 /* Resources */,
 				ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */,
 				ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */,
-				ED3DEF952892FC5D00568293 /* Assets.xcassets */,
 				ED3DEF9A2892FC5D00568293 /* Info.plist */,
 			);
 			path = Eventos;
@@ -224,6 +265,7 @@
 			children = (
 				ED3DEFCB28930CAA00568293 /* Flavor.swift */,
 				ED3DEFCD28930D2B00568293 /* FlavorColors.swift */,
+				ED270AF22893FCF1003CAAA6 /* FlavorFonts.swift */,
 			);
 			path = Flavor;
 			sourceTree = "<group>";
@@ -231,9 +273,9 @@
 		EDF312D9289317910031D751 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				EDF312E428931C750031D751 /* UI */,
-				ED3DEFC72893095F00568293 /* Colors */,
 				ED3DEFCA28930C9400568293 /* Flavor */,
+				ED3DEFC72893095F00568293 /* Colors */,
+				EDF312E428931C750031D751 /* UI */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -408,6 +450,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */,
+				ED270AFC28940316003CAAA6 /* Quicksand-SemiBold.ttf in Resources */,
+				ED270AFB28940316003CAAA6 /* Quicksand-Medium.ttf in Resources */,
+				ED270AFD28940316003CAAA6 /* Quicksand-Light.ttf in Resources */,
+				ED270AFA28940316003CAAA6 /* Quicksand-Regular.ttf in Resources */,
+				ED270AF928940316003CAAA6 /* Quicksand-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +587,7 @@
 				EDF312DC289318850031D751 /* ViewCode.swift in Sources */,
 				EDF312E028931B020031D751 /* EventViewData.swift in Sources */,
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
+				ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
 				ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */,
 				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,

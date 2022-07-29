@@ -10,6 +10,7 @@ import UIKit
 final class CustomErrorView: UIView {
     
     private let colors = Flavor.shared.colors
+    private let fonts = Flavor.shared.fonts
     private var action: (() -> Void)?
     
     private lazy var containerStackView: UIStackView = {
@@ -34,6 +35,7 @@ final class CustomErrorView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = colors.background.onColor
+        label.font = fonts.quickSandMedium.withSize(20)
         
         return label
     }()
@@ -42,6 +44,7 @@ final class CustomErrorView: UIView {
         let button = UIButton()
         button.setTitle("Tentar novamente", for: .normal)
         button.setTitleColor(colors.primary.onColor, for: .normal)
+        button.titleLabel?.font = fonts.quickSandMedium.withSize(20)
         button.backgroundColor = colors.primary.color
         button.roundedCorner(withRadius: 8)
         button.addTarget(nil, action: #selector(actionButtonTapped), for: .touchUpInside)

@@ -12,4 +12,5 @@ final class Flavor {
     static let shared = Flavor()
 
     let colors = FlavorColorsSchemes()
+    let fonts = FlavorFonts()
 }

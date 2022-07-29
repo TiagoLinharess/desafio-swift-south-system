@@ -38,7 +38,7 @@ class EventsListViewModel: EventsListViewModelProtocol {
                 date: "30/09/2000"
             )
             ]
-            self.viewStatus.onNext(.noResults)
+            self.viewStatus.onNext(.success)
         }
     }
 }
