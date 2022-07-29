@@ -39,6 +39,10 @@ final class EventsListView: UIView {
         return tableView
     }()
     
+    private lazy var customErrorView: CustomErrorView = {
+        CustomErrorView()
+    }()
+    
     init(viewModel: EventsListViewModelProtocol) {
         self.viewModel = viewModel
         super.init(frame: .zero)
@@ -79,6 +83,7 @@ extension EventsListView: ViewCode {
         addSubview(containerStackView)
         containerStackView.addArrangedSubview(tableView)
         containerStackView.addArrangedSubview(loadingView)
+        containerStackView.addArrangedSubview(customErrorView)
     }
     
     func setupConstraints() {
@@ -122,6 +127,8 @@ private extension EventsListView {
             presentLoading()
         case let .error(error):
             presentError(message: error, action: onError)
+        case .noResults:
+            presentError(message: "Nenhum evento disponível", action: onError)
         }
     }
 
@@ -135,8 +142,8 @@ private extension EventsListView {
     }
     
     func presentError(message: String? = nil, action: @escaping () -> Void) {
-//        customErrorView.isHidden = false
-//        customErrorView.setup(localizedMessage: message, imageName: nil, action: action)
+        customErrorView.isHidden = false
+        customErrorView.configure(with: message ?? "Erro ao carregar eventos", action: action)
     }
     
     func presentLoading() {

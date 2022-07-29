@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4481DAB242546CAADABD0B88 /* Pods_Eventos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCC813F1736E32DBFD233E8 /* Pods_Eventos.framework */; };
+		ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		9D01242F872BEECDA7D121D0 /* Pods-EventosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventosTests.debug.xcconfig"; path = "Target Support Files/Pods-EventosTests/Pods-EventosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eventos_EventosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F3DDE4D26F447F19462549 /* Pods-Eventos-EventosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventos-EventosUITests.release.xcconfig"; path = "Target Support Files/Pods-Eventos-EventosUITests/Pods-Eventos-EventosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF312E528931C7B0031D751 /* ErrorView */,
+				ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				EDF312E028931B020031D751 /* EventViewData.swift in Sources */,
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
+				ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */,
 				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,

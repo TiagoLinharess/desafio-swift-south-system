@@ -21,6 +21,7 @@ class EventsListTableViewCell: UITableViewCell {
         stackView.layoutMargins = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
         stackView.spacing = 16
         stackView.backgroundColor = colors.surface.color
+        stackView.roundedCorner(withRadius: 8)
         
         return stackView
     }()
