@@ -9,7 +9,7 @@ import UIKit
 
 extension Flavor {
     
-    struct FlavorFonts {
+    struct Font {
         
         let quickSandLight: UIFont
         let quickSandRegular: UIFont

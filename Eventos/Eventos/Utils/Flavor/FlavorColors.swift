@@ -9,14 +9,14 @@ import UIKit
 
 extension Flavor {
     
-    struct FlavorColorsSchemes {
+    struct ColorScheme {
         
-        let background = FlavorColors(color: UIColor(hexString: "#272727"), onColor: UIColor(hexString: "#BEBEBE"))
-        let primary = FlavorColors(color: UIColor(hexString: "#3BABC1"), onColor: UIColor(hexString: "#FFFFFF"))
-        let surface = FlavorColors(color: UIColor(hexString: "#717171"), onColor: UIColor(hexString: "#FFFFFF"))
+        let background = Color(color: UIColor(hexString: "#272727"), onColor: UIColor(hexString: "#BEBEBE"))
+        let primary = Color(color: UIColor(hexString: "#3BABC1"), onColor: UIColor(hexString: "#FFFFFF"))
+        let surface = Color(color: UIColor(hexString: "#717171"), onColor: UIColor(hexString: "#FFFFFF"))
     }
 
-    struct FlavorColors {
+    struct Color {
         
         let color: UIColor
         let onColor: UIColor
