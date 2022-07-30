@@ -11,7 +11,7 @@
 		ED1B6C8128949F550039568A /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B6C8028949F550039568A /* EventDetailViewModel.swift */; };
 		ED1B6C832894A0670039568A /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B6C822894A0670039568A /* EventDetailView.swift */; };
 		ED1B6C852894A1420039568A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B6C842894A1420039568A /* EventDetailViewController.swift */; };
-		ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */; };
+		ED270AE42893F7FD003CAAA6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270AE32893F7FD003CAAA6 /* UIView+Extensions.swift */; };
 		ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270AF22893FCF1003CAAA6 /* FlavorFonts.swift */; };
 		ED270AF928940316003CAAA6 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF428940316003CAAA6 /* Quicksand-Bold.ttf */; };
 		ED270AFA28940316003CAAA6 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED270AF528940316003CAAA6 /* Quicksand-Regular.ttf */; };
@@ -47,6 +47,12 @@
 		EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */; };
 		EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E628931CB10031D751 /* CustomErrorView.swift */; };
 		EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E928931CF60031D751 /* ViewStatus.swift */; };
+		EDF3550D28957F570090E2AC /* EventInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3550C28957F570090E2AC /* EventInfoView.swift */; };
+		EDF35510289580D30090E2AC /* EventInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3550F289580D30090E2AC /* EventInfoViewModel.swift */; };
+		EDF355132895849D0090E2AC /* EventCheckinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355122895849D0090E2AC /* EventCheckinViewModel.swift */; };
+		EDF35515289585550090E2AC /* EventCheckinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF35514289585550090E2AC /* EventCheckinView.swift */; };
+		EDF355182895C4DB0090E2AC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355172895C4DB0090E2AC /* TextField.swift */; };
+		EDF3551B2895C5FC0090E2AC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551A2895C5FC0090E2AC /* Style.swift */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +86,7 @@
 		ED1B6C8028949F550039568A /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
 		ED1B6C822894A0670039568A /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		ED1B6C842894A1420039568A /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		ED270AE32893F7FD003CAAA6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		ED270AF22893FCF1003CAAA6 /* FlavorFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorFonts.swift; sourceTree = "<group>"; };
 		ED270AF428940316003CAAA6 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		ED270AF528940316003CAAA6 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -119,6 +125,12 @@
 		EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListTableViewCell.swift; sourceTree = "<group>"; };
 		EDF312E628931CB10031D751 /* CustomErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorView.swift; sourceTree = "<group>"; };
 		EDF312E928931CF60031D751 /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
+		EDF3550C28957F570090E2AC /* EventInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoView.swift; sourceTree = "<group>"; };
+		EDF3550F289580D30090E2AC /* EventInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewModel.swift; sourceTree = "<group>"; };
+		EDF355122895849D0090E2AC /* EventCheckinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckinViewModel.swift; sourceTree = "<group>"; };
+		EDF35514289585550090E2AC /* EventCheckinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckinView.swift; sourceTree = "<group>"; };
+		EDF355172895C4DB0090E2AC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		EDF3551A2895C5FC0090E2AC /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +187,7 @@
 		ED1B6C7F28949F3B0039568A /* EventDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EDF3550B28957F430090E2AC /* Scenes */,
 				ED1B6C8028949F550039568A /* EventDetailViewModel.swift */,
 				ED1B6C822894A0670039568A /* EventDetailView.swift */,
 				ED1B6C842894A1420039568A /* EventDetailViewController.swift */,
@@ -211,12 +224,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		ED270AFF289407F2003CAAA6 /* RoundedCorner */ = {
+		ED270AFF289407F2003CAAA6 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				ED270AE32893F7FD003CAAA6 /* RoundedCorner.swift */,
+				ED270AE32893F7FD003CAAA6 /* UIView+Extensions.swift */,
 			);
-			path = RoundedCorner;
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		ED270B0028940801003CAAA6 /* WebImage */ = {
@@ -447,9 +460,11 @@
 		EDF312E428931C750031D751 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EDF355192895C5E60090E2AC /* Style */,
+				EDF355162895C4C90090E2AC /* TextField */,
 				ED270B0028940801003CAAA6 /* WebImage */,
 				EDF312E528931C7B0031D751 /* ErrorView */,
-				ED270AFF289407F2003CAAA6 /* RoundedCorner */,
+				ED270AFF289407F2003CAAA6 /* UIView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -468,6 +483,49 @@
 				EDF312E928931CF60031D751 /* ViewStatus.swift */,
 			);
 			path = ViewStatus;
+			sourceTree = "<group>";
+		};
+		EDF3550B28957F430090E2AC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDF35511289584770090E2AC /* CheckinView */,
+				EDF3550E28957FF50090E2AC /* InfoView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF3550E28957FF50090E2AC /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3550F289580D30090E2AC /* EventInfoViewModel.swift */,
+				EDF3550C28957F570090E2AC /* EventInfoView.swift */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
+		EDF35511289584770090E2AC /* CheckinView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF355122895849D0090E2AC /* EventCheckinViewModel.swift */,
+				EDF35514289585550090E2AC /* EventCheckinView.swift */,
+			);
+			path = CheckinView;
+			sourceTree = "<group>";
+		};
+		EDF355162895C4C90090E2AC /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				EDF355172895C4DB0090E2AC /* TextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		EDF355192895C5E60090E2AC /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3551A2895C5FC0090E2AC /* Style.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -721,20 +779,26 @@
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED270B0D28944995003CAAA6 /* APIRepository.swift in Sources */,
 				ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */,
+				EDF35515289585550090E2AC /* EventCheckinView.swift in Sources */,
 				ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */,
 				ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */,
 				ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
-				ED270AE42893F7FD003CAAA6 /* RoundedCorner.swift in Sources */,
+				ED270AE42893F7FD003CAAA6 /* UIView+Extensions.swift in Sources */,
 				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
 				ED270B0228940819003CAAA6 /* WebImage.swift in Sources */,
+				EDF3550D28957F570090E2AC /* EventInfoView.swift in Sources */,
+				EDF3551B2895C5FC0090E2AC /* Style.swift in Sources */,
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
 				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
 				ED270B1028944BC5003CAAA6 /* RequestError.swift in Sources */,
 				ED1B6C832894A0670039568A /* EventDetailView.swift in Sources */,
+				EDF355182895C4DB0090E2AC /* TextField.swift in Sources */,
 				ED270B0628944536003CAAA6 /* Date+Extensions.swift in Sources */,
+				EDF35510289580D30090E2AC /* EventInfoViewModel.swift in Sources */,
 				ED1B6C852894A1420039568A /* EventDetailViewController.swift in Sources */,
+				EDF355132895849D0090E2AC /* EventCheckinViewModel.swift in Sources */,
 				ED270B1528944E8E003CAAA6 /* EventsWorker.swift in Sources */,
 				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
 				ED270B2028946B9F003CAAA6 /* Coordinator.swift in Sources */,
