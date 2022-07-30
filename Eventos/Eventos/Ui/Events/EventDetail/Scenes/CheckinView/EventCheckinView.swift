@@ -57,10 +57,22 @@ final class EventCheckinView: UIView {
         return button
     }()
     
+    private lazy var checkinLoading: UIActivityIndicatorView = {
+        let loadingView = UIActivityIndicatorView(style: .medium)
+        loadingView.startAnimating()
+        loadingView.color = colors.primary.onColor
+        loadingView.backgroundColor = colors.primary.color
+        loadingView.roundedCorner(withRadius: 8)
+        loadingView.isHidden = true
+        
+        return loadingView
+    }()
+    
     init(viewModel: EventCheckinViewModelProtocol) {
         self.viewModel = viewModel
         super.init(frame: .zero)
         setup()
+        setupBinding()
     }
     
     required init?(coder: NSCoder) {
@@ -69,9 +81,12 @@ final class EventCheckinView: UIView {
     
     @objc
     func checkinButtonDidTapped(_ sender: Any) {
+        guard let emailText = emailTextField.text, let nameText = nameTextField.text else { return }
+        
         do {
             try emailTextField.validate()
             try nameTextField.validate()
+            viewModel.makeCheckin(email: emailText, name: nameText)
         } catch {
             guard let error = error as? TextFieldError else { return }
             
@@ -88,6 +103,7 @@ extension EventCheckinView: ViewCode {
         containerStackView.addArrangedSubview(emailTextField)
         containerStackView.addArrangedSubview(nameTextField)
         containerStackView.addArrangedSubview(checkinButton)
+        containerStackView.addArrangedSubview(checkinLoading)
     }
     
     func setupConstraints() {
@@ -110,10 +126,52 @@ extension EventCheckinView: ViewCode {
             
             checkinButton.widthAnchor.constraint(equalToConstant: width),
             checkinButton.heightAnchor.constraint(equalToConstant: 44),
+            
+            checkinLoading.widthAnchor.constraint(equalToConstant: width),
+            checkinLoading.heightAnchor.constraint(equalToConstant: 44),
         ])
     }
     
     func configureView() {
         backgroundColor = .clear
+    }
+}
+
+private extension EventCheckinView {
+    
+    func setupBinding() {
+        let _ = viewModel.checkinStatus.subscribe { [weak self] published in
+            guard let self = self, let status = published.element else { return }
+            self.handle(with: status)
+        }
+    }
+    
+    func handle(with viewStatus: ViewStatus) {
+        resetCheckin()
+        
+        switch viewStatus {
+        case .loading:
+            presentCheckinLoading()
+        case let .error(error):
+           presentToast(with: error)
+        case .success:
+            presentToast(with: "Checkin efetuado com sucesso.")
+        default:
+            break
+        }
+    }
+    
+    func resetCheckin() {
+        checkinButton.isHidden = false
+        checkinLoading.isHidden = true
+    }
+    
+    func presentCheckinLoading() {
+        checkinButton.isHidden = true
+        checkinLoading.isHidden = false
+    }
+    
+    func presentToast(with message: String) {
+        //toast
     }
 }

@@ -6,22 +6,29 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol EventCheckinViewModelProtocol {
     var event: EventViewData { get }
+    var checkinStatus: PublishSubject<ViewStatus> { get set }
     
-    func makeCheckin()
+    func makeCheckin(email: String, name: String)
 }
 
 final class EventCheckinViewModel: EventCheckinViewModelProtocol {
     
     var event: EventViewData
+    var checkinStatus = PublishSubject<ViewStatus>()
     
     init(event: EventViewData) {
         self.event = event
     }
     
-    func makeCheckin() {
-        //TODO: Checkin
+    func makeCheckin(email: String, name: String) {
+        checkinStatus.onNext(.loading)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.checkinStatus.onNext(.success)
+        }
     }
 }
