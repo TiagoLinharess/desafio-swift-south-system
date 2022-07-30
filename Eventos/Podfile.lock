@@ -7,12 +7,14 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - ToastViewSwift (1.1.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher (~> 7.3.0)
   - RxCocoa (= 6.5.0)
   - RxSwift (= 6.5.0)
+  - ToastViewSwift
 
 SPEC REPOS:
   trunk:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - ToastViewSwift
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
@@ -28,7 +31,8 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  ToastViewSwift: 8fc7b518fdd834daf4b8009d09435a3fb1d8df46
 
-PODFILE CHECKSUM: cf6f562313b5df67b7ff14dac7b052b475ba9ec1
+PODFILE CHECKSUM: 0e63e541540f222f13350581e33555322fea73c4
 
 COCOAPODS: 1.11.3

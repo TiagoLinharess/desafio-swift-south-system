@@ -57,6 +57,7 @@
 		EDF355202895CD870090E2AC /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551F2895CD870090E2AC /* TextFieldError.swift */; };
 		EDF355232895CF7E0090E2AC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355222895CF7E0090E2AC /* String+Extensions.swift */; };
 		EDF355252895D6AD0090E2AC /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355242895D6AD0090E2AC /* FieldType.swift */; };
+		EDF355282895E96B0090E2AC /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355272895E96B0090E2AC /* Toast.swift */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		EDF3551F2895CD870090E2AC /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
 		EDF355222895CF7E0090E2AC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		EDF355242895D6AD0090E2AC /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
+		EDF355272895E96B0090E2AC /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,6 +471,7 @@
 		EDF312E428931C750031D751 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EDF355262895E9500090E2AC /* Toast */,
 				EDF355192895C5E60090E2AC /* Style */,
 				EDF355162895C4C90090E2AC /* TextField */,
 				ED270B0028940801003CAAA6 /* WebImage */,
@@ -546,6 +549,14 @@
 				EDF355222895CF7E0090E2AC /* String+Extensions.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		EDF355262895E9500090E2AC /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				EDF355272895E96B0090E2AC /* Toast.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -807,6 +818,7 @@
 				ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
 				ED270AE42893F7FD003CAAA6 /* UIView+Extensions.swift in Sources */,
+				EDF355282895E96B0090E2AC /* Toast.swift in Sources */,
 				EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */,
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
 				ED270B0228940819003CAAA6 /* WebImage.swift in Sources */,

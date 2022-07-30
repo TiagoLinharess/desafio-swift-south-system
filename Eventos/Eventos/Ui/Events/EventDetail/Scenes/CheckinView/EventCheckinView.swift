@@ -89,8 +89,7 @@ final class EventCheckinView: UIView {
             viewModel.makeCheckin(email: emailText, name: nameText)
         } catch {
             guard let error = error as? TextFieldError else { return }
-            
-            print(error.message)
+            presentToast(with: error.message)
         }
     }
 }
@@ -172,6 +171,7 @@ private extension EventCheckinView {
     }
     
     func presentToast(with message: String) {
-        //toast
+        let toast = UIToast(text: message)
+        toast.present()
     }
 }
