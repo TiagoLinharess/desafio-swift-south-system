@@ -10,7 +10,7 @@ import Foundation
 protocol EventDetailViewModelProtocol {
     var event: EventViewData { get }
     
-    func makeCheckin()
+    func onCheckin()
 }
 
 final class EventDetailViewModel: EventDetailViewModelProtocol {
@@ -21,7 +21,7 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
         self.event = event
     }
     
-    func makeCheckin() {
+    func onCheckin() {
         //TODO: Checkin
     }
 }
