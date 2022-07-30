@@ -20,6 +20,7 @@ final class TextField: UITextField {
         self.name = name ?? placeholder
         super.init(frame: .zero)
         setup(placeholder: placeholder)
+        configureField()
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +52,7 @@ final class TextField: UITextField {
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
     }
     
-    private func confugreField() {
+    private func configureField() {
         autocapitalizationType = type.autocapitalizationType
         keyboardType = type.keyboardType
     }
@@ -62,7 +63,7 @@ final class TextField: UITextField {
         do {
             try validator.validate(text: text ?? "", fieldName: name)
         } catch let error {
-            guard let error = error as? TextField._Error else { return }
+            guard let error = error as? TextFieldError else { return }
             throw error
         }
     }

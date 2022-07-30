@@ -45,6 +45,18 @@ final class EventCheckinView: UIView {
         TextField(type: .notEmpty, placeholder: "Nome", style: .background)
     }()
     
+    private lazy var checkinButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Fazer Check-in", for: .normal)
+        button.setTitleColor(colors.primary.onColor, for: .normal)
+        button.titleLabel?.font = fonts.quickSandBold.withSize(20)
+        button.backgroundColor = colors.primary.color
+        button.roundedCorner(withRadius: 8)
+        button.addTarget(nil, action: #selector(checkinButtonDidTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    
     init(viewModel: EventCheckinViewModelProtocol) {
         self.viewModel = viewModel
         super.init(frame: .zero)
@@ -53,6 +65,18 @@ final class EventCheckinView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc
+    func checkinButtonDidTapped(_ sender: Any) {
+        do {
+            try emailTextField.validate()
+            try nameTextField.validate()
+        } catch {
+            guard let error = error as? TextFieldError else { return }
+            
+            print(error.message)
+        }
     }
 }
 
@@ -63,6 +87,7 @@ extension EventCheckinView: ViewCode {
         containerStackView.addArrangedSubview(checkinLabel)
         containerStackView.addArrangedSubview(emailTextField)
         containerStackView.addArrangedSubview(nameTextField)
+        containerStackView.addArrangedSubview(checkinButton)
     }
     
     func setupConstraints() {
@@ -82,6 +107,9 @@ extension EventCheckinView: ViewCode {
             
             nameTextField.widthAnchor.constraint(equalToConstant: width),
             nameTextField.heightAnchor.constraint(equalToConstant: 44),
+            
+            checkinButton.widthAnchor.constraint(equalToConstant: width),
+            checkinButton.heightAnchor.constraint(equalToConstant: 44),
         ])
     }
     

@@ -7,18 +7,11 @@
 
 import Foundation
 
-extension TextField {
+struct TextFieldError: Error {
     
-    enum _Error: Error {
-        case empty(String), invalid(String)
-        
-        var message: String {
-            switch self {
-            case let .empty(field):
-                return "\(field) é obrigatório"
-            case let .invalid(field):
-                return "\(field) inválido"
-            }
-        }
+    let message: String
+    
+    init(_ message: String) {
+        self.message = message
     }
 }

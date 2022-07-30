@@ -15,13 +15,13 @@ protocol Validator {
 struct NotEmptyValidator: Validator {
     
     func validate(text: String, fieldName: String) throws {
-        guard text.count > 0 else { throw TextField._Error.empty(fieldName) }
+        guard text.count > 0 else { throw TextFieldError("\(fieldName) é obrigatório") }
     }
 }
 
 struct EmailValidator: Validator {
     
     func validate(text: String, fieldName: String) throws {
-        guard text.isEmail() else { throw TextField._Error.invalid(fieldName) }
+        guard text.isEmail() else { throw TextFieldError("\(fieldName) inválido") }
     }
 }
