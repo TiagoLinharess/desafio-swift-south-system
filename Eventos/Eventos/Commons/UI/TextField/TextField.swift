@@ -9,20 +9,6 @@ import UIKit
 
 final class TextField: UITextField {
     
-    enum FieldType {
-        case email, notEmpty
-        
-        var validator: Validator {
-            
-            switch self {
-            case .email:
-                return EmailValidator()
-            case .notEmpty:
-                return NotEmptyValidator()
-            }
-        }
-    }
-    
     private let textPadding = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     private let style: Style
     private let type: FieldType
@@ -32,7 +18,7 @@ final class TextField: UITextField {
         self.style = style
         self.type = type
         self.name = name ?? placeholder
-        super.init()
+        super.init(frame: .zero)
         setup(placeholder: placeholder)
     }
     
@@ -63,6 +49,11 @@ final class TextField: UITextField {
         roundedCorner(withRadius: 8)
         font = quickSandRegular
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
+    }
+    
+    private func confugreField() {
+        autocapitalizationType = type.autocapitalizationType
+        keyboardType = type.keyboardType
     }
     
     func validate() throws {

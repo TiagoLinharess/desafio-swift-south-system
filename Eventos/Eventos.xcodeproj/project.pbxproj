@@ -56,6 +56,7 @@
 		EDF3551D2895CBE80090E2AC /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551C2895CBE80090E2AC /* Validators.swift */; };
 		EDF355202895CD870090E2AC /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551F2895CD870090E2AC /* TextFieldError.swift */; };
 		EDF355232895CF7E0090E2AC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355222895CF7E0090E2AC /* String+Extensions.swift */; };
+		EDF355252895D6AD0090E2AC /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355242895D6AD0090E2AC /* FieldType.swift */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +138,7 @@
 		EDF3551C2895CBE80090E2AC /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		EDF3551F2895CD870090E2AC /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
 		EDF355222895CF7E0090E2AC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		EDF355242895D6AD0090E2AC /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +527,7 @@
 				EDF355172895C4DB0090E2AC /* TextField.swift */,
 				EDF3551F2895CD870090E2AC /* TextFieldError.swift */,
 				EDF3551C2895CBE80090E2AC /* Validators.swift */,
+				EDF355242895D6AD0090E2AC /* FieldType.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				EDF3551D2895CBE80090E2AC /* Validators.swift in Sources */,
 				ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */,
 				EDF35515289585550090E2AC /* EventCheckinView.swift in Sources */,
+				EDF355252895D6AD0090E2AC /* FieldType.swift in Sources */,
 				ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */,
 				ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */,
 				ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */,

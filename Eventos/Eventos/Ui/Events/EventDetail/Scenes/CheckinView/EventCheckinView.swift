@@ -38,7 +38,7 @@ final class EventCheckinView: UIView {
     }()
     
     private lazy var emailTextField: TextField = {
-        TextField(type: .email, placeholder: "E-mail", style: .background)
+        TextField(type: .email, name: "E-mail", placeholder: "E-mail", style: .background)
     }()
     
     private lazy var nameTextField: TextField = {
