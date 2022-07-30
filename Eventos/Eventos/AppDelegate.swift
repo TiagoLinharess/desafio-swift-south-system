@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        setupNavigationBarAppearance(for: application)
         return true
     }
     
@@ -41,3 +42,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+extension AppDelegate {
+    func setupNavigationBarAppearance(for application: UIApplication) {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        let background = Flavor.shared.colors.background
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: background.onColor,
+            .font: Flavor.shared.fonts.quickSandBold.withSize(28)
+        ]
+
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundColor = background.color
+        navigationBarAppearance.titleTextAttributes = attributes
+        navigationBarAppearance.largeTitleTextAttributes = attributes
+        
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        UINavigationBar.appearance().tintColor = background.onColor
+    }
+}

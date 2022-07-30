@@ -39,7 +39,10 @@ private extension EventsCoordinator {
     }
     
     func presentEventDetail(with event: EventViewData) {
-        //TODO: Detalhe de evento
+        let viewModel = EventDetailViewModel(event: event)
+        let viewController = EventDetailViewController(viewModel: viewModel)
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

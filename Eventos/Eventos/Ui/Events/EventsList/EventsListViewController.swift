@@ -23,30 +23,24 @@ final class EventsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setupNavigationBar()
     }
 }
 
 private extension EventsListViewController {
+    
     func setupView() {
         view = customView
     }
     
     func setupNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        let background = Flavor.shared.colors.background
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: background.onColor,
-            .font: Flavor.shared.fonts.quickSandBold.withSize(28)
-        ]
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Eventos"
-        
-        appearance.titleTextAttributes = attributes
-        appearance.largeTitleTextAttributes = attributes
-        appearance.backgroundColor = background.color
-
-        navigationItem.standardAppearance = appearance
     }
 }
