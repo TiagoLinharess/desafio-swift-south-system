@@ -53,6 +53,9 @@
 		EDF35515289585550090E2AC /* EventCheckinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF35514289585550090E2AC /* EventCheckinView.swift */; };
 		EDF355182895C4DB0090E2AC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355172895C4DB0090E2AC /* TextField.swift */; };
 		EDF3551B2895C5FC0090E2AC /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551A2895C5FC0090E2AC /* Style.swift */; };
+		EDF3551D2895CBE80090E2AC /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551C2895CBE80090E2AC /* Validators.swift */; };
+		EDF355202895CD870090E2AC /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3551F2895CD870090E2AC /* TextFieldError.swift */; };
+		EDF355232895CF7E0090E2AC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF355222895CF7E0090E2AC /* String+Extensions.swift */; };
 		F8C0F201FBCC0E7BB1550C13 /* Pods_Eventos_EventosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C241C1B1E8532821B4C7E201 /* Pods_Eventos_EventosUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +134,9 @@
 		EDF35514289585550090E2AC /* EventCheckinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckinView.swift; sourceTree = "<group>"; };
 		EDF355172895C4DB0090E2AC /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		EDF3551A2895C5FC0090E2AC /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		EDF3551C2895CBE80090E2AC /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		EDF3551F2895CD870090E2AC /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
+		EDF355222895CF7E0090E2AC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,7 @@
 		ED270B032894450A003CAAA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EDF355212895CF6D0090E2AC /* String */,
 				ED270B0E28944BB0003CAAA6 /* Error */,
 				ED270B07289446EE003CAAA6 /* Int */,
 				ED270B0428944526003CAAA6 /* Date */,
@@ -516,6 +523,8 @@
 			isa = PBXGroup;
 			children = (
 				EDF355172895C4DB0090E2AC /* TextField.swift */,
+				EDF3551F2895CD870090E2AC /* TextFieldError.swift */,
+				EDF3551C2895CBE80090E2AC /* Validators.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -526,6 +535,14 @@
 				EDF3551A2895C5FC0090E2AC /* Style.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		EDF355212895CF6D0090E2AC /* String */ = {
+			isa = PBXGroup;
+			children = (
+				EDF355222895CF7E0090E2AC /* String+Extensions.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -778,6 +795,7 @@
 				EDF312E028931B020031D751 /* EventViewData.swift in Sources */,
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED270B0D28944995003CAAA6 /* APIRepository.swift in Sources */,
+				EDF3551D2895CBE80090E2AC /* Validators.swift in Sources */,
 				ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */,
 				EDF35515289585550090E2AC /* EventCheckinView.swift in Sources */,
 				ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */,
@@ -793,6 +811,7 @@
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
 				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
 				ED270B1028944BC5003CAAA6 /* RequestError.swift in Sources */,
+				EDF355202895CD870090E2AC /* TextFieldError.swift in Sources */,
 				ED1B6C832894A0670039568A /* EventDetailView.swift in Sources */,
 				EDF355182895C4DB0090E2AC /* TextField.swift in Sources */,
 				ED270B0628944536003CAAA6 /* Date+Extensions.swift in Sources */,
@@ -800,6 +819,7 @@
 				ED1B6C852894A1420039568A /* EventDetailViewController.swift in Sources */,
 				EDF355132895849D0090E2AC /* EventCheckinViewModel.swift in Sources */,
 				ED270B1528944E8E003CAAA6 /* EventsWorker.swift in Sources */,
+				EDF355232895CF7E0090E2AC /* String+Extensions.swift in Sources */,
 				ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */,
 				ED270B2028946B9F003CAAA6 /* Coordinator.swift in Sources */,
 				ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */,

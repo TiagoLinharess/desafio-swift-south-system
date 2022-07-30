@@ -38,21 +38,11 @@ final class EventCheckinView: UIView {
     }()
     
     private lazy var emailTextField: TextField = {
-        let font = fonts.quickSandRegular.withSize(16)
-        let color = colors.background.onColor
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: color.withAlphaComponent(0.6),
-            .font: font,
-        ]
-        let textField = TextField()
-        textField.backgroundColor = .clear
-        textField.border(with: color, andWidth: 1)
-        textField.roundedCorner(withRadius: 8)
-        textField.font = font
-        textField.textColor = color
-        textField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: attributes)
-        
-        return textField
+        TextField(type: .email, placeholder: "E-mail", style: .background)
+    }()
+    
+    private lazy var nameTextField: TextField = {
+        TextField(type: .notEmpty, placeholder: "Nome", style: .background)
     }()
     
     init(viewModel: EventCheckinViewModelProtocol) {
@@ -72,6 +62,7 @@ extension EventCheckinView: ViewCode {
         addSubview(containerStackView)
         containerStackView.addArrangedSubview(checkinLabel)
         containerStackView.addArrangedSubview(emailTextField)
+        containerStackView.addArrangedSubview(nameTextField)
     }
     
     func setupConstraints() {
@@ -88,6 +79,9 @@ extension EventCheckinView: ViewCode {
             
             emailTextField.widthAnchor.constraint(equalToConstant: width),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
+            
+            nameTextField.widthAnchor.constraint(equalToConstant: width),
+            nameTextField.heightAnchor.constraint(equalToConstant: 44),
         ])
     }
     
