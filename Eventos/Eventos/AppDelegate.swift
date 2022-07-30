@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         setupNavigationBarAppearance(for: application)
+        setupKeyBoardManager()
         return true
     }
     
@@ -43,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    
     func setupNavigationBarAppearance(for application: UIApplication) {
         let navigationBarAppearance = UINavigationBarAppearance()
         let background = Flavor.shared.colors.background
@@ -59,5 +62,11 @@ extension AppDelegate {
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         UINavigationBar.appearance().tintColor = background.onColor
+    }
+    
+    func setupKeyBoardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Ok"
+        IQKeyboardManager.shared.placeholderFont = Flavor.shared.fonts.quickSandRegular
     }
 }
