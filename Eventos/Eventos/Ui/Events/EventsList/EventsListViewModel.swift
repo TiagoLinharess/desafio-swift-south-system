@@ -5,11 +5,11 @@
 //  Created by Tiago Linhares on 28/07/22.
 //
 
-import Combine
+import Foundation
 
 protocol EventsListViewModelProtocol {
     var events: [EventViewData] { get set }
-    var viewStatusPublisher: AnyPublisher<ViewStatus, Never> { get }
+    var viewStatusPublisher: Publisher<ViewStatus> { get }
     
     func getEvents()
     func selectEvent(at index: Int)
@@ -19,14 +19,11 @@ protocol EventsListViewModelProtocol {
 class EventsListViewModel: EventsListViewModelProtocol {
     
     private let worker: GetEventsWorkerProtocol
-    private let stateChangedSubject = PassthroughSubject<ViewStatus, Never>()
     
     var events: [EventViewData] = []
     var onSelectEvent: ((EventViewData) -> Void)?
     
-    var viewStatusPublisher: AnyPublisher<ViewStatus, Never> {
-        stateChangedSubject.eraseToAnyPublisher()
-    }
+    var viewStatusPublisher = Publisher<ViewStatus>()
     
     init(worker: GetEventsWorkerProtocol = EventsWorker()) {
         self.worker = worker
@@ -37,7 +34,7 @@ class EventsListViewModel: EventsListViewModelProtocol {
     }
     
     func getEvents() {
-        stateChangedSubject.send(.loading)
+        viewStatusPublisher.send(.loading)
         
         worker.getEvents { [weak self] result in
             switch result {
@@ -45,14 +42,14 @@ class EventsListViewModel: EventsListViewModelProtocol {
             case let .success(events):
                 if events.isEmpty {
                     self?.events = []
-                    self?.stateChangedSubject.send(.noResults)
+                    self?.viewStatusPublisher.send(.noResults)
                     return
                 }
                 
                 self?.events = events
-                self?.stateChangedSubject.send(.success)
+                self?.viewStatusPublisher.send(.success)
             case let .failure(error):
-                self?.stateChangedSubject.send(.error(error.errorDescription))
+                self?.viewStatusPublisher.send(.error(error.errorDescription))
             }
         }
     }

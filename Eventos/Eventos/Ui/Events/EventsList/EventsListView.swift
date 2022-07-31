@@ -5,14 +5,12 @@
 //  Created by Tiago Linhares on 28/07/22.
 //
 
-import Combine
 import UIKit
 
 final class EventsListView: UIView {
     
     private let colors = Flavor.shared.colors
     private let viewModel: EventsListViewModelProtocol
-    private var cancellables = Set<AnyCancellable>()
     
     private lazy var containerStackView: UIStackView = {
         let stackview = UIStackView()
@@ -116,12 +114,10 @@ extension EventsListView: ViewCode {
 private extension EventsListView {
     
     func setupBinding() {
-        viewModel.viewStatusPublisher
-            .debounce(for: 0, scheduler: DispatchQueue.main)
-            .sink { [weak self] status in
-                guard let self = self else { return }
-                self.handle(with: status, onError: self.viewModel.getEvents)
-            }.store(in: &cancellables)
+        viewModel.viewStatusPublisher.sink { [weak self] status in
+            guard let self = self else { return }
+            self.handle(with: status, onError: self.viewModel.getEvents)
+        }
     }
     
     func handle(with viewStatus: ViewStatus, onError: @escaping () -> Void) {

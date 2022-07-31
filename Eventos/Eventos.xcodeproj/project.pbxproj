@@ -29,6 +29,7 @@
 		ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1928945193003CAAA6 /* EventDto.swift */; };
 		ED270B2028946B9F003CAAA6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B1F28946B9F003CAAA6 /* Coordinator.swift */; };
 		ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B2128946BDD003CAAA6 /* EventsCoordinator.swift */; };
+		ED36259B2896FAA600C927F7 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36259A2896FAA600C927F7 /* Publisher.swift */; };
 		ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */; };
 		ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */; };
 		ED3DEF962892FC5D00568293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3DEF952892FC5D00568293 /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		ED270B1928945193003CAAA6 /* EventDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDto.swift; sourceTree = "<group>"; };
 		ED270B1F28946B9F003CAAA6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ED270B2128946BDD003CAAA6 /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
+		ED36259A2896FAA600C927F7 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		ED3DEF892892FC5A00568293 /* Eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3DEF8C2892FC5A00568293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3DEF8E2892FC5A00568293 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		ED270B032894450A003CAAA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ED3625992896FA8600C927F7 /* Publisher */,
 				EDEDCFE92896B1B50018C4E7 /* Dictionary */,
 				EDA4036B2895F82600774D0E /* Encodable */,
 				EDF355212895CF6D0090E2AC /* String */,
@@ -331,6 +334,14 @@
 				ED270B1F28946B9F003CAAA6 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ED3625992896FA8600C927F7 /* Publisher */ = {
+			isa = PBXGroup;
+			children = (
+				ED36259A2896FAA600C927F7 /* Publisher.swift */,
+			);
+			path = Publisher;
 			sourceTree = "<group>";
 		};
 		ED3DEF802892FC5A00568293 = {
@@ -838,6 +849,7 @@
 				ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */,
 				ED270B0D28944995003CAAA6 /* APIRepository.swift in Sources */,
 				EDF3551D2895CBE80090E2AC /* Validators.swift in Sources */,
+				ED36259B2896FAA600C927F7 /* Publisher.swift in Sources */,
 				ED270B1228944D70003CAAA6 /* Endpoint.swift in Sources */,
 				EDF35515289585550090E2AC /* EventCheckinView.swift in Sources */,
 				EDF355252895D6AD0090E2AC /* FieldType.swift in Sources */,
