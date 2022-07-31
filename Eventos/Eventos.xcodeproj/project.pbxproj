@@ -45,6 +45,7 @@
 		EDA4036A2895F76600774D0E /* CheckinEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA403692895F76600774D0E /* CheckinEndpoint.swift */; };
 		EDA4036D2895F83700774D0E /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4036C2895F83700774D0E /* Encodable+Extensions.swift */; };
 		EDCF9FB01C757BF1F88657E6 /* Pods_EventosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1B8F03F69B55071DD3D4C6 /* Pods_EventosTests.framework */; };
+		EDEDCFE82896B1B00018C4E7 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEDCFE72896B1B00018C4E7 /* Dictionary+Extensions.swift */; };
 		EDF312DC289318850031D751 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DB289318850031D751 /* ViewCode.swift */; };
 		EDF312E028931B020031D751 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DF28931B020031D751 /* EventViewData.swift */; };
 		EDF312E328931BF00031D751 /* EventsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */; };
@@ -131,6 +132,7 @@
 		EDA403672895F63A00774D0E /* EventRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRegistration.swift; sourceTree = "<group>"; };
 		EDA403692895F76600774D0E /* CheckinEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinEndpoint.swift; sourceTree = "<group>"; };
 		EDA4036C2895F83700774D0E /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		EDEDCFE72896B1B00018C4E7 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		EDF312DB289318850031D751 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		EDF312DF28931B020031D751 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
 		EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		ED270B032894450A003CAAA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EDEDCFE92896B1B50018C4E7 /* Dictionary */,
 				EDA4036B2895F82600774D0E /* Encodable */,
 				EDF355212895CF6D0090E2AC /* String */,
 				ED270B0E28944BB0003CAAA6 /* Error */,
@@ -438,6 +441,14 @@
 				EDA4036C2895F83700774D0E /* Encodable+Extensions.swift */,
 			);
 			path = Encodable;
+			sourceTree = "<group>";
+		};
+		EDEDCFE92896B1B50018C4E7 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				EDEDCFE72896B1B00018C4E7 /* Dictionary+Extensions.swift */,
+			);
+			path = Dictionary;
 			sourceTree = "<group>";
 		};
 		EDF312D9289317910031D751 /* Commons */ = {
@@ -861,6 +872,7 @@
 				ED3DEF8D2892FC5A00568293 /* AppDelegate.swift in Sources */,
 				ED3DEF8F2892FC5A00568293 /* SceneDelegate.swift in Sources */,
 				ED1B6C8128949F550039568A /* EventDetailViewModel.swift in Sources */,
+				EDEDCFE82896B1B00018C4E7 /* Dictionary+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
