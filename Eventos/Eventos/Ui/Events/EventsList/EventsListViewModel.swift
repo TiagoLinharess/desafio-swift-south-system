@@ -5,12 +5,11 @@
 //  Created by Tiago Linhares on 28/07/22.
 //
 
-import Foundation
-import RxSwift
+import Combine
 
 protocol EventsListViewModelProtocol {
     var events: [EventViewData] { get set }
-    var viewStatus: PublishSubject<ViewStatus> { get set }
+    var viewStatusPublisher: AnyPublisher<ViewStatus, Never> { get }
     
     func getEvents()
     func selectEvent(at index: Int)
@@ -19,11 +18,15 @@ protocol EventsListViewModelProtocol {
 
 class EventsListViewModel: EventsListViewModelProtocol {
     
+    private let worker: GetEventsWorkerProtocol
+    private let stateChangedSubject = PassthroughSubject<ViewStatus, Never>()
+    
     var events: [EventViewData] = []
-    var viewStatus = PublishSubject<ViewStatus>()
     var onSelectEvent: ((EventViewData) -> Void)?
     
-    private let worker: GetEventsWorkerProtocol
+    var viewStatusPublisher: AnyPublisher<ViewStatus, Never> {
+        stateChangedSubject.eraseToAnyPublisher()
+    }
     
     init(worker: GetEventsWorkerProtocol = EventsWorker()) {
         self.worker = worker
@@ -34,7 +37,7 @@ class EventsListViewModel: EventsListViewModelProtocol {
     }
     
     func getEvents() {
-        viewStatus.onNext(.loading)
+        stateChangedSubject.send(.loading)
         
         worker.getEvents { [weak self] result in
             switch result {
@@ -42,14 +45,14 @@ class EventsListViewModel: EventsListViewModelProtocol {
             case let .success(events):
                 if events.isEmpty {
                     self?.events = []
-                    self?.viewStatus.onNext(.noResults)
+                    self?.stateChangedSubject.send(.noResults)
                     return
                 }
                 
                 self?.events = events
-                self?.viewStatus.onNext(.success)
+                self?.stateChangedSubject.send(.success)
             case let .failure(error):
-                self?.viewStatus.onNext(.error(error.errorDescription))
+                self?.stateChangedSubject.send(.error(error.errorDescription))
             }
         }
     }
