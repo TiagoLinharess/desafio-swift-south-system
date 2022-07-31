@@ -10,13 +10,12 @@ import UIKit
 
 class Publisher<T> {
     
+    private(set) var value: T?
     private let subject = PassthroughSubject<T, Never>()
     private var cancellables = Set<AnyCancellable>()
     private var publisher: AnyPublisher<T, Never> {
         subject.eraseToAnyPublisher()
     }
-    
-    var value: T?
     
     func send(_ object: T) {
         subject.send(object)
