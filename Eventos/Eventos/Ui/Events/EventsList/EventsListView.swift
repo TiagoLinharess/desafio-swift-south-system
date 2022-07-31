@@ -114,7 +114,7 @@ extension EventsListView: ViewCode {
 private extension EventsListView {
     
     func setupBinding() {
-        viewModel.viewStatusPublisher.sink { [weak self] status in
+        viewModel.viewStatus.sink { [weak self] status in
             guard let self = self else { return }
             self.handle(with: status, onError: self.viewModel.getEvents)
         }

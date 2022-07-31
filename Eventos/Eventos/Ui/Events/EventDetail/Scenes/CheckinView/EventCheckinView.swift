@@ -139,7 +139,7 @@ extension EventCheckinView: ViewCode {
 private extension EventCheckinView {
     
     func setupBinding() {
-        viewModel.checkinStatusPublisher.sink { [weak self] viewStatus in
+        viewModel.checkinStatus.sink { [weak self] viewStatus in
             self?.handle(with: viewStatus)
         }
     }

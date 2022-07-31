@@ -9,7 +9,7 @@ import Foundation
 
 protocol EventsListViewModelProtocol {
     var events: [EventViewData] { get set }
-    var viewStatusPublisher: Publisher<ViewStatus> { get }
+    var viewStatus: Publisher<ViewStatus> { get }
     
     func getEvents()
     func selectEvent(at index: Int)
@@ -23,7 +23,7 @@ class EventsListViewModel: EventsListViewModelProtocol {
     var events: [EventViewData] = []
     var onSelectEvent: ((EventViewData) -> Void)?
     
-    var viewStatusPublisher = Publisher<ViewStatus>()
+    var viewStatus = Publisher<ViewStatus>()
     
     init(worker: GetEventsWorkerProtocol = EventsWorker()) {
         self.worker = worker
@@ -34,7 +34,7 @@ class EventsListViewModel: EventsListViewModelProtocol {
     }
     
     func getEvents() {
-        viewStatusPublisher.send(.loading)
+        viewStatus.send(.loading)
         
         worker.getEvents { [weak self] result in
             switch result {
@@ -42,14 +42,14 @@ class EventsListViewModel: EventsListViewModelProtocol {
             case let .success(events):
                 if events.isEmpty {
                     self?.events = []
-                    self?.viewStatusPublisher.send(.noResults)
+                    self?.viewStatus.send(.noResults)
                     return
                 }
                 
                 self?.events = events
-                self?.viewStatusPublisher.send(.success)
+                self?.viewStatus.send(.success)
             case let .failure(error):
-                self?.viewStatusPublisher.send(.error(error.errorDescription))
+                self?.viewStatus.send(.error(error.errorDescription))
             }
         }
     }

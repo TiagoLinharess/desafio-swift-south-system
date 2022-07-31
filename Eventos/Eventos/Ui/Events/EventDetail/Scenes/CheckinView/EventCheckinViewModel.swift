@@ -9,7 +9,7 @@ import Foundation
 
 protocol EventCheckinViewModelProtocol {
     var event: EventViewData { get }
-    var checkinStatusPublisher: Publisher<ViewStatus> { get }
+    var checkinStatus: Publisher<ViewStatus> { get }
     var onCheckin: (() -> Void)? { get set }
     
     func makeCheckin(email: String, name: String)
@@ -21,7 +21,7 @@ final class EventCheckinViewModel: EventCheckinViewModelProtocol {
     
     var event: EventViewData
     var onCheckin: (() -> Void)?
-    var checkinStatusPublisher = Publisher<ViewStatus>()
+    var checkinStatus = Publisher<ViewStatus>()
     
     init(event: EventViewData, onCheckin: (() -> Void)?, worker: PostEventCheckinWorkerProtocol = EventsWorker()) {
         self.event = event
@@ -30,15 +30,15 @@ final class EventCheckinViewModel: EventCheckinViewModelProtocol {
     }
     
     func makeCheckin(email: String, name: String) {
-        checkinStatusPublisher.send(.loading)
+        checkinStatus.send(.loading)
         let registration = EventRegistration(eventId: event.id, name: name, email: email)
 
         worker.makeCheckin(with: registration) { [weak self] result in
             switch result {
             case .success(_):
-                self?.checkinStatusPublisher.send(.success)
+                self?.checkinStatus.send(.success)
             case let .failure(error):
-                self?.checkinStatusPublisher.send(.error(error.localizedDescription))
+                self?.checkinStatus.send(.error(error.localizedDescription))
             }
         }
     }
