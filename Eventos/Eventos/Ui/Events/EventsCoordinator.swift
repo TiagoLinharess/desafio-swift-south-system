@@ -42,6 +42,10 @@ private extension EventsCoordinator {
         let viewModel = EventDetailViewModel(event: event)
         let viewController = EventDetailViewController(viewModel: viewModel)
         
+        viewModel.checkinDidMake = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

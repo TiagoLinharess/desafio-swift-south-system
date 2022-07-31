@@ -17,11 +17,13 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
     
     let event: EventViewData
     
+    var checkinDidMake: (() -> Void)?
+    
     init(event: EventViewData) {
         self.event = event
     }
     
     func onCheckin() {
-        //TODO: Checkin
+        checkinDidMake?()
     }
 }

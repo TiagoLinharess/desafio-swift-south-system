@@ -158,6 +158,7 @@ private extension EventCheckinView {
            presentToast(with: error)
         case .success:
             presentToast(with: "Checkin efetuado com sucesso.")
+            viewModel.onCheckin?()
         default:
             break
         }

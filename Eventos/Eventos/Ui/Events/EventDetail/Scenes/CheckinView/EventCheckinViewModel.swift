@@ -10,6 +10,7 @@ import Combine
 protocol EventCheckinViewModelProtocol {
     var event: EventViewData { get }
     var checkinStatusPublisher: AnyPublisher<ViewStatus, Never> { get }
+    var onCheckin: (() -> Void)? { get set }
     
     func makeCheckin(email: String, name: String)
 }
@@ -20,14 +21,15 @@ final class EventCheckinViewModel: EventCheckinViewModelProtocol {
     private let worker: PostEventCheckinWorkerProtocol
     
     var event: EventViewData
-    
+    var onCheckin: (() -> Void)?
     var checkinStatusPublisher: AnyPublisher<ViewStatus, Never> {
         stateChangedSubject.eraseToAnyPublisher()
     }
     
-    init(event: EventViewData, worker: PostEventCheckinWorkerProtocol = EventsWorker()) {
+    init(event: EventViewData, onCheckin: (() -> Void)?, worker: PostEventCheckinWorkerProtocol = EventsWorker()) {
         self.event = event
         self.worker = worker
+        self.onCheckin = onCheckin
     }
     
     func makeCheckin(email: String, name: String) {

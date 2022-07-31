@@ -38,7 +38,7 @@ final class EventDetailView: UIView {
     }()
     
     private lazy var eventCheckinView: EventCheckinView = {
-        EventCheckinView(viewModel: EventCheckinViewModel(event: viewModel.event))
+        EventCheckinView(viewModel: EventCheckinViewModel(event: viewModel.event, onCheckin: viewModel.onCheckin))
     }()
     
     init(viewModel: EventDetailViewModelProtocol) {
