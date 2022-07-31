@@ -17,10 +17,11 @@ struct APIRepository: RepositoryProtocol {
     let baseUrl = "http://5f5a8f24d44d640016169133.mockapi.io/api"
     
     func callMethod(endpoint: Endpoint, completion: @escaping (Result<Data, RequestError>) -> ()) {
-        let url = URL(string:"\(baseUrl)/\(endpoint.endpoint)")
+        let url = URL(string:"\(baseUrl)\(endpoint.endpoint)")
         guard let url = url else {return}
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
+        request.httpBody = endpoint.params?.toData
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             

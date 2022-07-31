@@ -5,30 +5,42 @@
 //  Created by Tiago Linhares on 30/07/22.
 //
 
-import Foundation
-import RxSwift
+import Combine
 
 protocol EventCheckinViewModelProtocol {
     var event: EventViewData { get }
-    var checkinStatus: PublishSubject<ViewStatus> { get set }
+    var checkinStatusPublisher: AnyPublisher<ViewStatus, Never> { get }
     
     func makeCheckin(email: String, name: String)
 }
 
 final class EventCheckinViewModel: EventCheckinViewModelProtocol {
     
-    var event: EventViewData
-    var checkinStatus = PublishSubject<ViewStatus>()
+    private let stateChangedSubject = PassthroughSubject<ViewStatus, Never>()
+    private let worker: PostEventCheckinWorkerProtocol
     
-    init(event: EventViewData) {
+    var event: EventViewData
+    
+    var checkinStatusPublisher: AnyPublisher<ViewStatus, Never> {
+        stateChangedSubject.eraseToAnyPublisher()
+    }
+    
+    init(event: EventViewData, worker: PostEventCheckinWorkerProtocol = EventsWorker()) {
         self.event = event
+        self.worker = worker
     }
     
     func makeCheckin(email: String, name: String) {
-        checkinStatus.onNext(.loading)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.checkinStatus.onNext(.success)
+        stateChangedSubject.send(.loading)
+        let registration = EventRegistration(eventId: event.id, name: name, email: email)
+
+        worker.makeCheckin(with: registration) { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.stateChangedSubject.send(.success)
+            case let .failure(error):
+                self?.stateChangedSubject.send(.error(error.localizedDescription))
+            }
         }
     }
 }

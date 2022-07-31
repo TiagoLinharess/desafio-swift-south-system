@@ -41,6 +41,9 @@
 		ED3DEFC9289309AA00568293 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFC8289309AA00568293 /* UIColor+Extensions.swift */; };
 		ED3DEFCC28930CAA00568293 /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFCB28930CAA00568293 /* Flavor.swift */; };
 		ED3DEFCE28930D2B00568293 /* FlavorColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3DEFCD28930D2B00568293 /* FlavorColors.swift */; };
+		EDA403682895F63A00774D0E /* EventRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA403672895F63A00774D0E /* EventRegistration.swift */; };
+		EDA4036A2895F76600774D0E /* CheckinEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA403692895F76600774D0E /* CheckinEndpoint.swift */; };
+		EDA4036D2895F83700774D0E /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4036C2895F83700774D0E /* Encodable+Extensions.swift */; };
 		EDCF9FB01C757BF1F88657E6 /* Pods_EventosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1B8F03F69B55071DD3D4C6 /* Pods_EventosTests.framework */; };
 		EDF312DC289318850031D751 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DB289318850031D751 /* ViewCode.swift */; };
 		EDF312E028931B020031D751 /* EventViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF312DF28931B020031D751 /* EventViewData.swift */; };
@@ -125,6 +128,9 @@
 		ED3DEFC8289309AA00568293 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		ED3DEFCB28930CAA00568293 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
 		ED3DEFCD28930D2B00568293 /* FlavorColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorColors.swift; sourceTree = "<group>"; };
+		EDA403672895F63A00774D0E /* EventRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRegistration.swift; sourceTree = "<group>"; };
+		EDA403692895F76600774D0E /* CheckinEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinEndpoint.swift; sourceTree = "<group>"; };
+		EDA4036C2895F83700774D0E /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		EDF312DB289318850031D751 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		EDF312DF28931B020031D751 /* EventViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewData.swift; sourceTree = "<group>"; };
 		EDF312E228931BF00031D751 /* EventsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 		ED270B032894450A003CAAA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EDA4036B2895F82600774D0E /* Encodable */,
 				EDF355212895CF6D0090E2AC /* String */,
 				ED270B0E28944BB0003CAAA6 /* Error */,
 				ED270B07289446EE003CAAA6 /* Int */,
@@ -310,6 +317,7 @@
 			children = (
 				ED270B1428944E8E003CAAA6 /* EventsWorker.swift */,
 				ED270B1628944F4A003CAAA6 /* EventsListEndpoint.swift */,
+				EDA403692895F76600774D0E /* CheckinEndpoint.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -424,6 +432,14 @@
 			path = Flavor;
 			sourceTree = "<group>";
 		};
+		EDA4036B2895F82600774D0E /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4036C2895F83700774D0E /* Encodable+Extensions.swift */,
+			);
+			path = Encodable;
+			sourceTree = "<group>";
+		};
 		EDF312D9289317910031D751 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +459,7 @@
 		EDF312DD28931A9A0031D751 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				EDA403672895F63A00774D0E /* EventRegistration.swift */,
 				EDF312DF28931B020031D751 /* EventViewData.swift */,
 				ED270B1928945193003CAAA6 /* EventDto.swift */,
 			);
@@ -816,6 +833,7 @@
 				ED270B2228946BDD003CAAA6 /* EventsCoordinator.swift in Sources */,
 				ED270AF32893FCF1003CAAA6 /* FlavorFonts.swift in Sources */,
 				ED270B1A28945193003CAAA6 /* EventDto.swift in Sources */,
+				EDA4036D2895F83700774D0E /* Encodable+Extensions.swift in Sources */,
 				ED3DEFC5289304F600568293 /* EventsListView.swift in Sources */,
 				ED270AE42893F7FD003CAAA6 /* UIView+Extensions.swift in Sources */,
 				EDF355282895E96B0090E2AC /* Toast.swift in Sources */,
@@ -823,9 +841,11 @@
 				ED3DEFC32893030300568293 /* EventsListViewModel.swift in Sources */,
 				ED270B0228940819003CAAA6 /* WebImage.swift in Sources */,
 				EDF3550D28957F570090E2AC /* EventInfoView.swift in Sources */,
+				EDA403682895F63A00774D0E /* EventRegistration.swift in Sources */,
 				EDF3551B2895C5FC0090E2AC /* Style.swift in Sources */,
 				EDF312EA28931CF60031D751 /* ViewStatus.swift in Sources */,
 				EDF312E728931CB10031D751 /* CustomErrorView.swift in Sources */,
+				EDA4036A2895F76600774D0E /* CheckinEndpoint.swift in Sources */,
 				ED270B1028944BC5003CAAA6 /* RequestError.swift in Sources */,
 				EDF355202895CD870090E2AC /* TextFieldError.swift in Sources */,
 				ED1B6C832894A0670039568A /* EventDetailView.swift in Sources */,

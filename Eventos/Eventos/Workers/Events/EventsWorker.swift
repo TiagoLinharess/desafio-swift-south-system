@@ -11,7 +11,11 @@ protocol GetEventsWorkerProtocol {
     func getEvents(completion: @escaping (Result<[EventViewData], RequestError>) -> Void)
 }
 
-struct EventsWorker: GetEventsWorkerProtocol {
+protocol PostEventCheckinWorkerProtocol {
+    func makeCheckin(with registration: EventRegistration, completion: @escaping (Result<Void, RequestError>) -> Void)
+}
+
+struct EventsWorker: GetEventsWorkerProtocol, PostEventCheckinWorkerProtocol {
     
     private let repository: RepositoryProtocol
     
@@ -38,6 +42,17 @@ struct EventsWorker: GetEventsWorkerProtocol {
                     completion(.failure(RequestError(errorDescription: error.localizedDescription)))
                 }
                 
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func makeCheckin(with registration: EventRegistration, completion: @escaping (Result<Void, RequestError>) -> Void) {
+        repository.callMethod(endpoint: CheckinEndpoint(registration: registration)) { result in
+            switch result {
+            case .success(_):
+                completion(.success(()))
             case let .failure(error):
                 completion(.failure(error))
             }

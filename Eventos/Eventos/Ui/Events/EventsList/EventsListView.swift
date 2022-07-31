@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class EventsListView: UIView {
     
@@ -132,6 +133,8 @@ private extension EventsListView {
             presentError(message: error, action: onError)
         case .noResults:
             presentError(message: "Nenhum evento disponível", action: onError)
+        case .none:
+            break
         }
     }
 

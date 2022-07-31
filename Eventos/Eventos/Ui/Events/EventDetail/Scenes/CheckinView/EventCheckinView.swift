@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/07/22.
 //
 
+import Combine
 import UIKit
 
 final class EventCheckinView: UIView {
@@ -12,6 +13,7 @@ final class EventCheckinView: UIView {
     private let viewModel: EventCheckinViewModelProtocol
     private let colors = Flavor.shared.colors
     private let fonts = Flavor.shared.fonts
+    private var cancellables = Set<AnyCancellable>()
     
     private lazy var containerStackView: UIStackView = {
         let stackview = UIStackView()
@@ -139,10 +141,11 @@ extension EventCheckinView: ViewCode {
 private extension EventCheckinView {
     
     func setupBinding() {
-        let _ = viewModel.checkinStatus.subscribe { [weak self] published in
-            guard let self = self, let status = published.element else { return }
-            self.handle(with: status)
-        }
+        viewModel.checkinStatusPublisher
+            .debounce(for: 0, scheduler: DispatchQueue.main)
+            .sink { [weak self] viewStatus in
+            self?.handle(with: viewStatus)
+        }.store(in: &cancellables)
     }
     
     func handle(with viewStatus: ViewStatus) {
