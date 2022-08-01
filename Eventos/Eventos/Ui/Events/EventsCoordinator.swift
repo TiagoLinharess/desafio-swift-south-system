@@ -46,7 +46,17 @@ private extension EventsCoordinator {
             self?.navigationController?.popViewController(animated: true)
         }
         
+        viewModel.share = { [weak self] event in
+            self?.shareEvent(event)
+        }
+        
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func shareEvent(_ event: EventViewData) {
+        let text = "\(event.title)\n\(event.description)"
+        let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        navigationController?.present(activity, animated: true)
     }
 }
 

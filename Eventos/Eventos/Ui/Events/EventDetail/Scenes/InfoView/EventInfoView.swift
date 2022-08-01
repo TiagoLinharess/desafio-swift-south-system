@@ -66,6 +66,21 @@ final class EventInfoView: UIView {
         return label
     }()
     
+    private lazy var shareButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(systemName: "square.and.arrow.up")?.withTintColor(colors.primary.onColor, renderingMode: .alwaysOriginal)
+        button.setTitle("Compartilhar", for: .normal)
+        button.setTitleColor(colors.primary.onColor, for: .normal)
+        button.titleLabel?.font = fonts.quickSandBold.withSize(20)
+        button.setImage(image, for: .normal)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.backgroundColor = colors.primary.color
+        button.roundedCorner(withRadius: 8)
+        button.addTarget(nil, action: #selector(shareButtonDidTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    
     init(viewModel: EventInfoViewModelProtocol) {
         self.viewModel = viewModel
         super.init(frame: .zero)
@@ -75,6 +90,11 @@ final class EventInfoView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc
+    func shareButtonDidTapped(_ sender: Any) {
+        viewModel.share()
     }
 }
 
@@ -87,6 +107,7 @@ extension EventInfoView: ViewCode {
         containerStackView.addArrangedSubview(dateLabel)
         containerStackView.addArrangedSubview(descriptionLabel)
         containerStackView.addArrangedSubview(priceLabel)
+        containerStackView.addArrangedSubview(shareButton)
     }
     
     func setupConstraints() {
@@ -101,7 +122,10 @@ extension EventInfoView: ViewCode {
             containerStackView.widthAnchor.constraint(equalToConstant: width),
             
             eventImageView.widthAnchor.constraint(equalToConstant: width),
-            eventImageView.heightAnchor.constraint(equalToConstant: 220)
+            eventImageView.heightAnchor.constraint(equalToConstant: 220),
+            
+            shareButton.widthAnchor.constraint(equalToConstant: width),
+            shareButton.heightAnchor.constraint(equalToConstant: 44),
         ])
     }
     

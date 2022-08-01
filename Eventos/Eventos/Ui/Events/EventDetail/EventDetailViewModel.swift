@@ -11,6 +11,7 @@ protocol EventDetailViewModelProtocol {
     var event: EventViewData { get }
     
     func onCheckin()
+    func onShare()
 }
 
 final class EventDetailViewModel: EventDetailViewModelProtocol {
@@ -18,6 +19,7 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
     let event: EventViewData
     
     var checkinDidMake: (() -> Void)?
+    var share: ((EventViewData) -> Void)?
     
     init(event: EventViewData) {
         self.event = event
@@ -25,5 +27,9 @@ final class EventDetailViewModel: EventDetailViewModelProtocol {
     
     func onCheckin() {
         checkinDidMake?()
+    }
+    
+    func onShare() {
+        share?(event)
     }
 }
